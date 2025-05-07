@@ -455,3 +455,19 @@ def get_always_observed_ids(first_analysis):
             all_ids[kg_id] = True
 
     return list(all_ids.keys())
+
+def recover_other_info_from_ids(kgs_id,date_for_recover_info):
+    print(kgs_id)
+    result = {}
+    df = pd.read_csv(f'../data/quality_analysis_results/{date_for_recover_info}.csv')
+    for _, row in df.iterrows():
+        kg_id = row['KG id']
+        if kg_id in kgs_id:
+            result[kg_id] = {
+                'KG id': kg_id,
+                'KG name': row.get('KG name', ''),
+                'SPARQL endpoint URL': row.get('SPARQL endpoint URL', ''),
+            }
+    
+    output_data =  list(result.values())
+    pd.DataFrame(output_data).to_csv('../data/KGs_always_up_info.csv', index=False)
