@@ -172,3 +172,8 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+.devcontainer
+data/quality_analysis_results/*
+!.gitkeep
+!data/quality_analysis_results/extract_quality_data.sh
+.DS_Store
