@@ -1,0 +1,684 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>List of KGs with SPARQL endpoint always online across the 5 quality assessment</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-transparentGray { background-color: undefined; }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1ec06d3a-00db-81c2-99e3-c8d9a82f27bb" class="page sans"><header><h1 class="page-title">List of KGs with SPARQL endpoint always online across the 5 quality assessment</h1><p class="page-description"></p></header><div class="page-body"><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg aria-hidden="true" role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(71, 70, 68, 0.6);flex-shrink:0" class="typesTitle"><path d="M0.637695 13.1914C1.0957 13.1914 1.32812 13 1.47852 12.5215L2.24414 10.3887H6.14746L6.90625 12.5215C7.05664 13 7.2959 13.1914 7.74707 13.1914C8.22559 13.1914 8.5332 12.9043 8.5332 12.4531C8.5332 12.2891 8.50586 12.1523 8.44434 11.9678L5.41602 3.79199C5.2041 3.21777 4.82129 2.9375 4.19922 2.9375C3.60449 2.9375 3.21484 3.21777 3.0166 3.78516L-0.0322266 12.002C-0.09375 12.1797 -0.121094 12.3232 -0.121094 12.4668C-0.121094 12.918 0.166016 13.1914 0.637695 13.1914ZM2.63379 9.12402L4.17871 4.68066H4.21973L5.76465 9.12402H2.63379ZM12.2793 13.2324C13.3115 13.2324 14.2891 12.6787 14.7129 11.8037H14.7402V12.5762C14.7471 12.9863 15.0273 13.2393 15.4238 13.2393C15.834 13.2393 16.1143 12.9795 16.1143 12.5215V8.00977C16.1143 6.49902 14.9658 5.52148 13.1543 5.52148C11.7666 5.52148 10.6592 6.08887 10.2695 6.99121C10.1943 7.15527 10.1533 7.3125 10.1533 7.46289C10.1533 7.81152 10.4062 8.04395 10.7686 8.04395C11.0215 8.04395 11.2129 7.94824 11.3496 7.73633C11.7529 6.99121 12.2861 6.65625 13.1064 6.65625C14.0977 6.65625 14.6992 7.20996 14.6992 8.1123V8.67285L12.5664 8.7959C10.7686 8.8916 9.77734 9.69824 9.77734 11.0107C9.77734 12.3369 10.8096 13.2324 12.2793 13.2324ZM12.6621 12.1387C11.8008 12.1387 11.2129 11.667 11.2129 10.9561C11.2129 10.2725 11.7598 9.82129 12.7578 9.75977L14.6992 9.62988V10.3203C14.6992 11.3457 13.7969 12.1387 12.6621 12.1387Z"></path></svg></span>KG id</th><th><span class="icon property-icon"><svg aria-hidden="true" role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(71, 70, 68, 0.6);flex-shrink:0" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>KG name</th><th><span class="icon property-icon"><svg aria-hidden="true" role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(71, 70, 68, 0.6);flex-shrink:0" class="typesUrl"><path d="M7.69922 10.8945L8.73828 9.84863C7.91797 9.77344 7.34375 9.51367 6.91992 9.08984C5.76465 7.93457 5.76465 6.29395 6.91309 5.14551L9.18262 2.87598C10.3379 1.7207 11.9717 1.7207 13.127 2.87598C14.2891 4.04492 14.2822 5.67188 13.1338 6.82031L11.958 7.99609C12.1768 8.49512 12.2451 9.10352 12.1289 9.62988L14.0908 7.6748C15.7725 6 15.7793 3.62109 14.084 1.92578C12.3887 0.223633 10.0098 0.237305 8.33496 1.91211L5.95605 4.29785C4.28125 5.97266 4.26758 8.35156 5.96289 10.0469C6.36621 10.4434 6.90625 10.7441 7.69922 10.8945ZM8.30078 5.13184L7.26855 6.17773C8.08203 6.25293 8.66309 6.51953 9.08008 6.93652C10.2422 8.09863 10.2422 9.73242 9.08691 10.8809L6.81738 13.1504C5.66211 14.3057 4.03516 14.3057 2.87305 13.1504C1.71094 11.9883 1.71777 10.3545 2.87305 9.20605L4.04199 8.03027C3.83008 7.53125 3.75488 6.92969 3.87109 6.39648L1.91602 8.35156C0.234375 10.0264 0.227539 12.4121 1.92285 14.1074C3.61816 15.8027 5.99707 15.7891 7.67188 14.1143L10.0439 11.7354C11.7256 10.0537 11.7324 7.6748 10.0371 5.98633C9.64062 5.58301 9.10059 5.28223 8.30078 5.13184Z"></path></svg></span>SPARQL endpoint URL</th></tr></thead><tbody><tr id="1ec06d3a-00db-81cf-8287-fc00626a164d"><td class="cell-title"><a href="kgs-list/agrovoc%201ec06d3a00db81cf8287fc00626a164d.html">agrovoc</a></td><td class="cell-JoR;">AGROVOC</td><td class="cell-Reqs"><a href="https://agrovoc.fao.org/sparql" class="url-value">https://agrovoc.fao.org/sparql</a></td></tr><tr id="1ec06d3a-00db-8173-8d7e-f98144ae61c1"><td class="cell-title"><a href="kgs-list/AIM%201ec06d3a00db81738d7ef98144ae61c1.html">AIM</a></td><td class="cell-JoR;">Analytics India Magazine</td><td class="cell-Reqs"><a href="https://analyticsindiamag.com/wp-json/wp/v2/" class="url-value">https://analyticsindiamag.com/wp-json/wp/v2/</a></td></tr><tr id="1ec06d3a-00db-81b1-8195-df914ad6b198"><td class="cell-title"><a href="kgs-list/allie-abbreviation-and-long-form-database-in-life-%201ec06d3a00db81b18195df914ad6b198.html">allie-abbreviation-and-long-form-database-in-life-science</a></td><td class="cell-JoR;">Allie Abbreviation And Long Form Database in Life Science</td><td class="cell-Reqs"><a href="http://data.allie.dbcls.jp/sparql" class="url-value">http://data.allie.dbcls.jp/sparql</a></td></tr><tr id="1ec06d3a-00db-817e-abcb-ffc9d34060b5"><td class="cell-title"><a href="kgs-list/aragodbpedia%201ec06d3a00db817eabcbffc9d34060b5.html">aragodbpedia</a></td><td class="cell-JoR;">AragoDBPedia</td><td class="cell-Reqs"><a href="http://opendata.aragon.es/sparql" class="url-value">http://opendata.aragon.es/sparql</a></td></tr><tr id="1ec06d3a-00db-8133-8c00-ee78000666f1"><td class="cell-title"><a href="kgs-list/b3kat%201ec06d3a00db81338c00ee78000666f1.html">b3kat</a></td><td class="cell-JoR;">B3Kat - Library Union Catalogues of Bavaria, Berlin and Brandenburg</td><td class="cell-Reqs"><a href="http://lod.b3kat.de/sparql" class="url-value">http://lod.b3kat.de/sparql</a></td></tr><tr id="1ec06d3a-00db-81a6-9642-ef151277e12e"><td class="cell-title"><a href="kgs-list/bio2rdf-affymetrix%201ec06d3a00db81a69642ef151277e12e.html">bio2rdf-affymetrix</a></td><td class="cell-JoR;">Bio2RDF::Affymetrix</td><td class="cell-Reqs"><a href="http://affymetrix.bio2rdf.org/sparql" class="url-value">http://affymetrix.bio2rdf.org/sparql</a></td></tr><tr id="1ec06d3a-00db-811f-bc5f-f00670db249a"><td class="cell-title"><a href="kgs-list/bio2rdf-biomodels%201ec06d3a00db811fbc5ff00670db249a.html">bio2rdf-biomodels</a></td><td class="cell-JoR;">Bio2RDF::Biomodels</td><td class="cell-Reqs"><a href="http://biomodels.bio2rdf.org/sparql" class="url-value">http://biomodels.bio2rdf.org/sparql</a></td></tr><tr id="1ec06d3a-00db-8142-9993-ceb301220a55"><td class="cell-title"><a href="kgs-list/bio2rdf-bioportal%201ec06d3a00db81429993ceb301220a55.html">bio2rdf-bioportal</a></td><td class="cell-JoR;">Bio2RDF::Bioportal</td><td class="cell-Reqs"><a href="http://bioportal.bio2rdf.org/sparql" class="url-value">http://bioportal.bio2rdf.org/sparql</a></td></tr><tr id="1ec06d3a-00db-8193-8358-d485ff5b718d"><td class="cell-title"><a href="kgs-list/bio2rdf-clinicaltrials%201ec06d3a00db81938358d485ff5b718d.html">bio2rdf-clinicaltrials</a></td><td class="cell-JoR;">Bio2RDF::Clinicaltrials</td><td class="cell-Reqs"><a href="http://clinicaltrials.bio2rdf.org/sparql" class="url-value">http://clinicaltrials.bio2rdf.org/sparql</a></td></tr><tr id="1ec06d3a-00db-817a-9d0a-d74263ee5861"><td class="cell-title"><a href="kgs-list/bio2rdf-ctd%201ec06d3a00db817a9d0ad74263ee5861.html">bio2rdf-ctd</a></td><td class="cell-JoR;">Bio2RDF::Ctd</td><td class="cell-Reqs"><a href="http://ctd.bio2rdf.org/sparql" class="url-value">http://ctd.bio2rdf.org/sparql</a></td></tr><tr id="1ec06d3a-00db-81b9-becf-c288dd38fe79"><td class="cell-title"><a href="kgs-list/bio2rdf-dbsnp%201ec06d3a00db81b9becfc288dd38fe79.html">bio2rdf-dbsnp</a></td><td class="cell-JoR;">Bio2RDF::Dbsnp</td><td class="cell-Reqs"><a href="http://dbsnp.bio2rdf.org/sparql" class="url-value">http://dbsnp.bio2rdf.org/sparql</a></td></tr><tr id="1ec06d3a-00db-8184-896a-c381db8375cd"><td class="cell-title"><a href="kgs-list/bio2rdf-drugbank%201ec06d3a00db8184896ac381db8375cd.html">bio2rdf-drugbank</a></td><td class="cell-JoR;">Bio2RDF::Drugbank</td><td class="cell-Reqs"><a href="http://drugbank.bio2rdf.org/sparql" class="url-value">http://drugbank.bio2rdf.org/sparql</a></td></tr><tr id="1ec06d3a-00db-81c6-954a-d3d60160f9d1"><td class="cell-title"><a href="kgs-list/bio2rdf-genage%201ec06d3a00db81c6954ad3d60160f9d1.html">bio2rdf-genage</a></td><td class="cell-JoR;">Bio2RDF::Genage</td><td class="cell-Reqs"><a href="http://genage.bio2rdf.org/sparql" class="url-value">http://genage.bio2rdf.org/sparql</a></td></tr><tr id="1ec06d3a-00db-8166-9fe9-df6df515cfed"><td class="cell-title"><a href="kgs-list/bio2rdf-gendr%201ec06d3a00db81669fe9df6df515cfed.html">bio2rdf-gendr</a></td><td class="cell-JoR;">Bio2RDF::Gendr</td><td class="cell-Reqs"><a href="http://gendr.bio2rdf.org/sparql" class="url-value">http://gendr.bio2rdf.org/sparql</a></td></tr><tr id="1ec06d3a-00db-818c-9536-c756fb86687e"><td class="cell-title"><a href="kgs-list/bio2rdf-goa%201ec06d3a00db818c9536c756fb86687e.html">bio2rdf-goa</a></td><td class="cell-JoR;">Bio2RDF::Goa</td><td class="cell-Reqs"><a href="http://goa.bio2rdf.org/sparql" class="url-value">http://goa.bio2rdf.org/sparql</a></td></tr><tr id="1ec06d3a-00db-8117-bd60-eb3fd4fcea4d"><td class="cell-title"><a href="kgs-list/bio2rdf-hgnc%201ec06d3a00db8117bd60eb3fd4fcea4d.html">bio2rdf-hgnc</a></td><td class="cell-JoR;">Bio2RDF::Hgnc</td><td class="cell-Reqs"><a href="http://hgnc.bio2rdf.org/sparql" class="url-value">http://hgnc.bio2rdf.org/sparql</a></td></tr><tr id="1ec06d3a-00db-81a0-8097-dcbcb64a1674"><td class="cell-title"><a href="kgs-list/bio2rdf-homologene%201ec06d3a00db81a08097dcbcb64a1674.html">bio2rdf-homologene</a></td><td class="cell-JoR;">Bio2RDF::Homologene</td><td class="cell-Reqs"><a href="http://homologene.bio2rdf.org/sparql" class="url-value">http://homologene.bio2rdf.org/sparql</a></td></tr><tr id="1ec06d3a-00db-81ed-9e9f-cb6444a5871b"><td class="cell-title"><a href="kgs-list/bio2rdf-interpro%201ec06d3a00db81ed9e9fcb6444a5871b.html">bio2rdf-interpro</a></td><td class="cell-JoR;">Bio2RDF::Interpro</td><td class="cell-Reqs"><a href="http://interpro.bio2rdf.org/sparql" class="url-value">http://interpro.bio2rdf.org/sparql</a></td></tr><tr id="1ec06d3a-00db-8170-b340-c2c5b9743009"><td class="cell-title"><a href="kgs-list/bio2rdf-irefindex%201ec06d3a00db8170b340c2c5b9743009.html">bio2rdf-irefindex</a></td><td class="cell-JoR;">Bio2RDF::Irefindex</td><td class="cell-Reqs"><a href="http://irefindex.bio2rdf.org/sparql" class="url-value">http://irefindex.bio2rdf.org/sparql</a></td></tr><tr id="1ec06d3a-00db-8128-a536-c67856aecc32"><td class="cell-title"><a href="kgs-list/bio2rdf-kegg%201ec06d3a00db8128a536c67856aecc32.html">bio2rdf-kegg</a></td><td class="cell-JoR;">Bio2RDF::KEGG</td><td class="cell-Reqs"><a href="http://kegg.bio2rdf.org/sparql" class="url-value">http://kegg.bio2rdf.org/sparql</a></td></tr><tr id="1ec06d3a-00db-8119-8e41-c1c43b9f0e12"><td class="cell-title"><a href="kgs-list/bio2rdf-lsr%201ec06d3a00db81198e41c1c43b9f0e12.html">bio2rdf-lsr</a></td><td class="cell-JoR;">Bio2RDF::Lsr</td><td class="cell-Reqs"><a href="http://lsr.bio2rdf.org/sparql" class="url-value">http://lsr.bio2rdf.org/sparql</a></td></tr><tr id="1ec06d3a-00db-812c-8d61-c4aee9ffcc17"><td class="cell-title"><a href="kgs-list/bio2rdf-mesh%201ec06d3a00db812c8d61c4aee9ffcc17.html">bio2rdf-mesh</a></td><td class="cell-JoR;">Bio2RDF::Mesh</td><td class="cell-Reqs"><a href="http://mesh.bio2rdf.org/sparql" class="url-value">http://mesh.bio2rdf.org/sparql</a></td></tr><tr id="1ec06d3a-00db-81a7-8bd7-d121f17393f0"><td class="cell-title"><a href="kgs-list/bio2rdf-mgi%201ec06d3a00db81a78bd7d121f17393f0.html">bio2rdf-mgi</a></td><td class="cell-JoR;">Bio2RDF::Mgi</td><td class="cell-Reqs"><a href="http://mgi.bio2rdf.org/sparql" class="url-value">http://mgi.bio2rdf.org/sparql</a></td></tr><tr id="1ec06d3a-00db-810c-b165-c43629b872ca"><td class="cell-title"><a href="kgs-list/bio2rdf-ncbigene%201ec06d3a00db810cb165c43629b872ca.html">bio2rdf-ncbigene</a></td><td class="cell-JoR;">Bio2RDF::Ncbigene</td><td class="cell-Reqs"><a href="http://ncbigene.bio2rdf.org/sparql" class="url-value">http://ncbigene.bio2rdf.org/sparql</a></td></tr><tr id="1ec06d3a-00db-8131-9db7-c60226d31c60"><td class="cell-title"><a href="kgs-list/bio2rdf-ndc%201ec06d3a00db81319db7c60226d31c60.html">bio2rdf-ndc</a></td><td class="cell-JoR;">Bio2RDF::Ndc</td><td class="cell-Reqs"><a href="http://ndc.bio2rdf.org/sparql" class="url-value">http://ndc.bio2rdf.org/sparql</a></td></tr><tr id="1ec06d3a-00db-8112-b74a-ca0a140d4b56"><td class="cell-title"><a href="kgs-list/bncf-ns%201ec06d3a00db8112b74aca0a140d4b56.html">bncf-ns</a></td><td class="cell-JoR;">Thesaurus BNCF</td><td class="cell-Reqs"><a href="http://digitale.bncf.firenze.sbn.it/openrdf-workbench/repositories/NS/query" class="url-value">http://digitale.bncf.firenze.sbn.it/openrdf-workbench/repositories/NS/query</a></td></tr><tr id="1ec06d3a-00db-81b2-a3fb-cf0bdb10e2cf"><td class="cell-title"><a href="kgs-list/bpr%201ec06d3a00db81b2a3fbcf0bdb10e2cf.html">bpr</a></td><td class="cell-JoR;">BPR ? Bibliography of the Italian Parliament and electoral studies</td><td class="cell-Reqs"><a href="http://dati.camera.it/sparql" class="url-value">http://dati.camera.it/sparql</a></td></tr><tr id="1ec06d3a-00db-8169-bb53-ec6a84f46f59"><td class="cell-title"><a href="kgs-list/BVMC%201ec06d3a00db8169bb53ec6a84f46f59.html">BVMC</a></td><td class="cell-JoR;">Biblioteca Virtual Miguel de Cervantes</td><td class="cell-Reqs"><a href="http://data.cervantesvirtual.com/sparql" class="url-value">http://data.cervantesvirtual.com/sparql</a></td></tr><tr id="1ec06d3a-00db-81af-a6ac-f16f7758c570"><td class="cell-title"><a href="kgs-list/Catch_Record_(2014-_2019)%201ec06d3a00db81afa6acf16f7758c570.html">Catch_Record_(2014-_2019)</a></td><td class="cell-JoR;">Norway catch records dataset @PSNC</td><td class="cell-Reqs"><a href="https://www.foodie-cloud.org/sparql" class="url-value">https://www.foodie-cloud.org/sparql</a></td></tr><tr id="1ec06d3a-00db-817d-8c51-ff867f396532"><td class="cell-title"><a href="kgs-list/cht%201ec06d3a00db817d8c51ff867f396532.html">cht</a></td><td class="cell-JoR;">Cultural Heritage Thesaurus</td><td class="cell-Reqs"><a href="https://digitaalerfgoed.poolparty.biz/PoolParty/sparql/term/id/cht" class="url-value">https://digitaalerfgoed.poolparty.biz/PoolParty/sparql/term/id/cht</a></td></tr><tr id="1ec06d3a-00db-8188-8383-c663f3928d1a"><td class="cell-title"><a href="kgs-list/comments-on-literature-in-literature%201ec06d3a00db81888383c663f3928d1a.html">comments-on-literature-in-literature</a></td><td class="cell-JoR;">Comments on Literature in Literature (CoLiL)</td><td class="cell-Reqs"><a href="http://colil.dbcls.jp/sparql" class="url-value">http://colil.dbcls.jp/sparql</a></td></tr><tr id="1ec06d3a-00db-81ae-87f1-dbc3d5c4d8af"><td class="cell-title"><a href="kgs-list/Corine_linked_dataset%201ec06d3a00db81ae87f1dbc3d5c4d8af.html">Corine_linked_dataset</a></td><td class="cell-JoR;">Corine linked dataset @PSNC</td><td class="cell-Reqs"><a href="https://www.foodie-cloud.org/sparql" class="url-value">https://www.foodie-cloud.org/sparql</a></td></tr><tr id="1ec06d3a-00db-81fb-99b4-c95b19eda75c"><td class="cell-title"><a href="kgs-list/corporate-body%201ec06d3a00db81fb99b4c95b19eda75c.html">corporate-body</a></td><td class="cell-JoR;">Corporate Body Named Authority List </td><td class="cell-Reqs"><a href="http://publications.europa.eu/webapi/rdf/sparql" class="url-value">http://publications.europa.eu/webapi/rdf/sparql</a></td></tr><tr id="1ec06d3a-00db-8137-9fd3-ef02ea12f40c"><td class="cell-title"><a href="kgs-list/country-authority-list%201ec06d3a00db81379fd3ef02ea12f40c.html">country-authority-list</a></td><td class="cell-JoR;">Country Name Authority List</td><td class="cell-Reqs"><a href="http://publications.europa.eu/webapi/rdf/sparql" class="url-value">http://publications.europa.eu/webapi/rdf/sparql</a></td></tr><tr id="1ec06d3a-00db-8137-9564-f27914b0270a"><td class="cell-title"><a href="kgs-list/CPC%201ec06d3a00db81379564f27914b0270a.html">CPC</a></td><td class="cell-JoR;">Cooperative Patent Classification</td><td class="cell-Reqs"><a href="https://data.epo.org/linked-data/query" class="url-value">https://data.epo.org/linked-data/query</a></td></tr><tr id="1ec06d3a-00db-8193-8623-f4e92f120999"><td class="cell-title"><a href="kgs-list/cz-list-of-databoxes%201ec06d3a00db81938623f4e92f120999.html">cz-list-of-databoxes</a></td><td class="cell-JoR;">List of Czech data boxes</td><td class="cell-Reqs"><a href="https://linked.opendata.cz/sparql" class="url-value">https://linked.opendata.cz/sparql</a></td></tr><tr id="1ec06d3a-00db-81b6-8470-d9194de105bb"><td class="cell-title"><a href="kgs-list/cz-nace%201ec06d3a00db81b68470d9194de105bb.html">cz-nace</a></td><td class="cell-JoR;">Czech statistical classification of economic activities in the European Community (CZ-NACE)</td><td class="cell-Reqs"><a href="https://linked.opendata.cz/sparql" class="url-value">https://linked.opendata.cz/sparql</a></td></tr><tr id="1ec06d3a-00db-81fa-9e8f-de9e6dd1a62c"><td class="cell-title"><a href="kgs-list/cz-nkod%201ec06d3a00db81fa9e8fde9e6dd1a62c.html">cz-nkod</a></td><td class="cell-JoR;">Czech National Open Data Catalog in DCAT-AP v1.2</td><td class="cell-Reqs"><a href="https://data.gov.cz/sparql" class="url-value">https://data.gov.cz/sparql</a></td></tr><tr id="1ec06d3a-00db-8170-9e59-f75100bcc989"><td class="cell-title"><a href="kgs-list/cz-ovm%201ec06d3a00db81709e59f75100bcc989.html">cz-ovm</a></td><td class="cell-JoR;">Institutions of public power of the Czech Republic</td><td class="cell-Reqs"><a href="https://linked.opendata.cz/sparql" class="url-value">https://linked.opendata.cz/sparql</a></td></tr><tr id="1ec06d3a-00db-8162-817a-da9f76fbadfc"><td class="cell-title"><a href="kgs-list/cz-souhrnne-typy-ovm%201ec06d3a00db8162817ada9f76fbadfc.html">cz-souhrnne-typy-ovm</a></td><td class="cell-JoR;">Summary types of Czech institutions of public power</td><td class="cell-Reqs"><a href="https://linked.opendata.cz/sparql" class="url-value">https://linked.opendata.cz/sparql</a></td></tr><tr id="1ec06d3a-00db-8144-ab57-f1c200e978b3"><td class="cell-title"><a href="kgs-list/data-bnf-fr%201ec06d3a00db8144ab57f1c200e978b3.html">data-bnf-fr</a></td><td class="cell-JoR;">data.bnf.fr - Bibliothèque nationale de France</td><td class="cell-Reqs"><a href="http://data.bnf.fr/sparql" class="url-value">http://data.bnf.fr/sparql</a></td></tr><tr id="1ec06d3a-00db-8171-a3f7-ce45ecb6a4d4"><td class="cell-title"><a href="kgs-list/data-persee-fr%201ec06d3a00db8171a3f7ce45ecb6a4d4.html">data-persee-fr</a></td><td class="cell-JoR;">Persée in RDF</td><td class="cell-Reqs"><a href="https://data.persee.fr/sparql" class="url-value">https://data.persee.fr/sparql</a></td></tr><tr id="1ec06d3a-00db-81f5-a76d-ec20c00d75c3"><td class="cell-title"><a href="kgs-list/datos-bcn-cl%201ec06d3a00db81f5a76dec20c00d75c3.html">datos-bcn-cl</a></td><td class="cell-JoR;">Datos.bcn.cl</td><td class="cell-Reqs"><a href="http://datos.bcn.cl/sparql" class="url-value">http://datos.bcn.cl/sparql</a></td></tr><tr id="1ec06d3a-00db-8154-8048-cf3acd456fae"><td class="cell-title"><a href="kgs-list/dbnary%201ec06d3a00db81548048cf3acd456fae.html">dbnary</a></td><td class="cell-JoR;">dbnary</td><td class="cell-Reqs"><a href="http://kaiko.getalp.org/sparql" class="url-value">http://kaiko.getalp.org/sparql</a></td></tr><tr id="1ec06d3a-00db-8189-9777-cb6b1e4b97bc"><td class="cell-title"><a href="kgs-list/dbpedia%201ec06d3a00db81899777cb6b1e4b97bc.html">dbpedia</a></td><td class="cell-JoR;">DBpedia</td><td class="cell-Reqs"><a href="http://dbpedia.org/sparql" class="url-value">http://dbpedia.org/sparql</a></td></tr><tr id="1ec06d3a-00db-81de-9ec9-fe908e7b0f3f"><td class="cell-title"><a href="kgs-list/dbpedia-fr%201ec06d3a00db81de9ec9fe908e7b0f3f.html">dbpedia-fr</a></td><td class="cell-JoR;">DBpedia in French</td><td class="cell-Reqs"><a href="http://fr.dbpedia.org/sparql" class="url-value">http://fr.dbpedia.org/sparql</a></td></tr><tr id="1ec06d3a-00db-8144-b94c-e854bb7daf57"><td class="cell-title"><a href="kgs-list/dbpedia-ja%201ec06d3a00db8144b94ce854bb7daf57.html">dbpedia-ja</a></td><td class="cell-JoR;">DBpedia in Japanese</td><td class="cell-Reqs"><a href="http://ja.dbpedia.org/sparql" class="url-value">http://ja.dbpedia.org/sparql</a></td></tr><tr id="1ec06d3a-00db-81b9-bb7b-c3192690587e"><td class="cell-title"><a href="kgs-list/ei2a%201ec06d3a00db81b9bb7bc3192690587e.html">ei2a</a></td><td class="cell-JoR;">Aragon Interoperable Information Structure EI2A - aragon open data</td><td class="cell-Reqs"><a href="https://opendata.aragon.es/sparql" class="url-value">https://opendata.aragon.es/sparql</a></td></tr><tr id="1ec06d3a-00db-8104-bda8-dd473ccc01c0"><td class="cell-title"><a href="kgs-list/elte-digital-institutional-repository-edit%201ec06d3a00db8104bda8dd473ccc01c0.html">elte-digital-institutional-repository-edit</a></td><td class="cell-JoR;">ELTE Digital Institutional Repository (EDIT)</td><td class="cell-Reqs"><a href="http://edit.elte.hu/sparql" class="url-value">http://edit.elte.hu/sparql</a></td></tr><tr id="1ec06d3a-00db-81b4-8772-d60196e67382"><td class="cell-title"><a href="kgs-list/english-heritage-archaeological-sciences-thesaurus%201ec06d3a00db81b48772d60196e67382.html">english-heritage-archaeological-sciences-thesaurus</a></td><td class="cell-JoR;">English Heritage Archaeological Sciences Thesaurus</td><td class="cell-Reqs"><a href="http://heritagedata.org/live/sparql" class="url-value">http://heritagedata.org/live/sparql</a></td></tr><tr id="1ec06d3a-00db-81bf-a294-e889bc36d919"><td class="cell-title"><a href="kgs-list/english-heritage-building-materials-thesaurus%201ec06d3a00db81bfa294e889bc36d919.html">english-heritage-building-materials-thesaurus</a></td><td class="cell-JoR;">English Heritage Building Materials Thesaurus</td><td class="cell-Reqs"><a href="http://heritagedata.org/live/sparql" class="url-value">http://heritagedata.org/live/sparql</a></td></tr><tr id="1ec06d3a-00db-81e7-89d7-d33bbcc06cb2"><td class="cell-title"><a href="kgs-list/english-heritage-components-thesaurus%201ec06d3a00db81e789d7d33bbcc06cb2.html">english-heritage-components-thesaurus</a></td><td class="cell-JoR;">English Heritage Components Thesaurus</td><td class="cell-Reqs"><a href="http://heritagedata.org/live/sparql" class="url-value">http://heritagedata.org/live/sparql</a></td></tr><tr id="1ec06d3a-00db-81ca-af26-e345516242c3"><td class="cell-title"><a href="kgs-list/english-heritage-event-types-thesaurus%201ec06d3a00db81caaf26e345516242c3.html">english-heritage-event-types-thesaurus</a></td><td class="cell-JoR;">English Heritage Event Types Thesaurus</td><td class="cell-Reqs"><a href="http://heritagedata.org/live/sparql" class="url-value">http://heritagedata.org/live/sparql</a></td></tr><tr id="1ec06d3a-00db-8113-a7e4-d0db4670b87a"><td class="cell-title"><a href="kgs-list/english-heritage-maritime-craft-thesaurus%201ec06d3a00db8113a7e4d0db4670b87a.html">english-heritage-maritime-craft-thesaurus</a></td><td class="cell-JoR;">English Heritage Maritime Craft Thesaurus</td><td class="cell-Reqs"><a href="http://heritagedata.org/live/sparql" class="url-value">http://heritagedata.org/live/sparql</a></td></tr><tr id="1ec06d3a-00db-8132-9bd3-d26b358b33b1"><td class="cell-title"><a href="kgs-list/english-heritage-monument-types-thesaurus%201ec06d3a00db81329bd3d26b358b33b1.html">english-heritage-monument-types-thesaurus</a></td><td class="cell-JoR;">English Heritage Monument Types Thesaurus</td><td class="cell-Reqs"><a href="http://heritagedata.org/live/sparql" class="url-value">http://heritagedata.org/live/sparql</a></td></tr><tr id="1ec06d3a-00db-81af-8608-e435ba64c388"><td class="cell-title"><a href="kgs-list/english-heritage-periods-list%201ec06d3a00db81af8608e435ba64c388.html">english-heritage-periods-list</a></td><td class="cell-JoR;">English Heritage Periods List</td><td class="cell-Reqs"><a href="http://heritagedata.org/live/sparql" class="url-value">http://heritagedata.org/live/sparql</a></td></tr><tr id="1ec06d3a-00db-817b-b2e3-f3b28a2fad6f"><td class="cell-title"><a href="kgs-list/english-index-of-multiple-deprivation-ranking-2010%201ec06d3a00db817bb2e3f3b28a2fad6f.html">english-index-of-multiple-deprivation-ranking-2010</a></td><td class="cell-JoR;">English Index of Multiple Deprivation Ranking 2010</td><td class="cell-Reqs"><a href="http://opendatacommunities.org/sparql" class="url-value">http://opendatacommunities.org/sparql</a></td></tr><tr id="1ec06d3a-00db-8100-996f-d8d6482c1625"><td class="cell-title"><a href="kgs-list/english-index-of-multiple-deprivation-score-2010%201ec06d3a00db8100996fd8d6482c1625.html">english-index-of-multiple-deprivation-score-2010</a></td><td class="cell-JoR;">English Index of Multiple Deprivation Score 2010</td><td class="cell-Reqs"><a href="http://opendatacommunities.org/sparql" class="url-value">http://opendatacommunities.org/sparql</a></td></tr><tr id="1ec06d3a-00db-815d-8003-e5ed1732d5ba"><td class="cell-title"><a href="kgs-list/english-indices-of-multiple-deprivation%201ec06d3a00db815d8003e5ed1732d5ba.html">english-indices-of-multiple-deprivation</a></td><td class="cell-JoR;">English Indices of Multiple Deprivation</td><td class="cell-Reqs"><a href="http://opendatacommunities.org/sparql" class="url-value">http://opendatacommunities.org/sparql</a></td></tr><tr id="1ec06d3a-00db-81c7-ab0c-d692286b0bb6"><td class="cell-title"><a href="kgs-list/environment-agency-bathing-water-quality%201ec06d3a00db81c7ab0cd692286b0bb6.html">environment-agency-bathing-water-quality</a></td><td class="cell-JoR;">Environment Agency Bathing Water Quality</td><td class="cell-Reqs"><a href="http://environment.data.gov.uk/sparql/bwq/query" class="url-value">http://environment.data.gov.uk/sparql/bwq/query</a></td></tr><tr id="1ec06d3a-00db-81f3-8ae2-e42f27d8690b"><td class="cell-title"><a href="kgs-list/EO_metadata%201ec06d3a00db81f38ae2e42f27d8690b.html">EO_metadata</a></td><td class="cell-JoR;">Micka (EO metadata) @PSNC</td><td class="cell-Reqs"><a href="https://www.foodie-cloud.org/sparql" class="url-value">https://www.foodie-cloud.org/sparql</a></td></tr><tr id="1ec06d3a-00db-8151-8bd9-d2109317686a"><td class="cell-title"><a href="kgs-list/ERAKG%201ec06d3a00db81518bd9d2109317686a.html">ERAKG</a></td><td class="cell-JoR;">Railway Infrastructure KG</td><td class="cell-Reqs"><a href="https://prod.virtuoso.ecdp.tech.ec.europa.eu/sparql" class="url-value">https://prod.virtuoso.ecdp.tech.ec.europa.eu/sparql</a></td></tr><tr id="1ec06d3a-00db-81e9-bdf1-e5276439f179"><td class="cell-title"><a href="kgs-list/European_Patent_Information%201ec06d3a00db81e9bdf1e5276439f179.html">European_Patent_Information</a></td><td class="cell-JoR;">EPO patents</td><td class="cell-Reqs"><a href="https://data.epo.org/linked-data/query" class="url-value">https://data.epo.org/linked-data/query</a></td></tr><tr id="1ec06d3a-00db-8152-a2e5-e92e0b51b0f1"><td class="cell-title"><a href="kgs-list/eurovoc%201ec06d3a00db8152a2e5e92e0b51b0f1.html">eurovoc</a></td><td class="cell-JoR;">EuroVoc</td><td class="cell-Reqs"><a href="http://publications.europa.eu/webapi/rdf/sparql" class="url-value">http://publications.europa.eu/webapi/rdf/sparql</a></td></tr><tr id="1ec06d3a-00db-817f-9012-d9502ed0828c"><td class="cell-title"><a href="kgs-list/FADN_(2019)%201ec06d3a00db817f9012d9502ed0828c.html">FADN_(2019)</a></td><td class="cell-JoR;">Farm Accountancy Data Network (FADN) linked dataset from 2019 @PSNC</td><td class="cell-Reqs"><a href="https://www.foodie-cloud.org/sparql" class="url-value">https://www.foodie-cloud.org/sparql</a></td></tr><tr id="1ec06d3a-00db-815d-ad3c-e35b6c040339"><td class="cell-title"><a href="kgs-list/fish-archaeological-objects-thesaurus%201ec06d3a00db815dad3ce35b6c040339.html">fish-archaeological-objects-thesaurus</a></td><td class="cell-JoR;">FISH Archaeological Objects Thesaurus</td><td class="cell-Reqs"><a href="http://heritagedata.org/live/sparql" class="url-value">http://heritagedata.org/live/sparql</a></td></tr><tr id="1ec06d3a-00db-81fc-be2e-e65979de680c"><td class="cell-title"><a href="kgs-list/Fishery_Stock_Dataset%201ec06d3a00db81fcbe2ee65979de680c.html">Fishery_Stock_Dataset</a></td><td class="cell-JoR;">Norway fishery stocks dataset @PSNC</td><td class="cell-Reqs"><a href="https://www.foodie-cloud.org/sparql" class="url-value">https://www.foodie-cloud.org/sparql</a></td></tr><tr id="1ec06d3a-00db-81cb-9cf4-c52ab54aa675"><td class="cell-title"><a href="kgs-list/framester%201ec06d3a00db81cb9cf4c52ab54aa675.html">framester</a></td><td class="cell-JoR;">Framester</td><td class="cell-Reqs"><a href="https://w3id.org/framester/sparql" class="url-value">https://w3id.org/framester/sparql</a></td></tr><tr id="1ec06d3a-00db-8176-8dd5-e1249c0b0e65"><td class="cell-title"><a href="kgs-list/geological-survey-of-austria-thesaurus%201ec06d3a00db81768dd5e1249c0b0e65.html">geological-survey-of-austria-thesaurus</a></td><td class="cell-JoR;">Geological Survey of Austria (GBA) - Thesaurus</td><td class="cell-Reqs"><a href="http://resource.geolba.ac.at/PoolParty/sparql/GeologicUnit" class="url-value">http://resource.geolba.ac.at/PoolParty/sparql/GeologicUnit</a></td></tr><tr id="1ec06d3a-00db-819b-b5aa-ce549a1917a0"><td class="cell-title"><a href="kgs-list/GTS%201ec06d3a00db819bb5aace549a1917a0.html">GTS</a></td><td class="cell-JoR;">Geological Timescale</td><td class="cell-Reqs"><a href="http://vocabs.ardc.edu.au/repository/api/sparql/csiro_international-chronostratigraphic-chart_geologic-time-scale-2020" class="url-value">http://vocabs.ardc.edu.au/repository/api/sparql/csiro_international-chronostratigraphic-chart_geologic-time-scale-2020</a></td></tr><tr id="1ec06d3a-00db-810e-9d80-f11072b7919a"><td class="cell-title"><a href="kgs-list/hito%201ec06d3a00db810e9d80f11072b7919a.html">hito</a></td><td class="cell-JoR;">HITO</td><td class="cell-Reqs"><a href="https://hitontology.eu/sparql" class="url-value">https://hitontology.eu/sparql</a></td></tr><tr id="1ec06d3a-00db-810e-ace8-e0af71769dc7"><td class="cell-title"><a href="kgs-list/IHE%201ec06d3a00db810eace8e0af71769dc7.html">IHE</a></td><td class="cell-JoR;">3LGM² IHE Ontology</td><td class="cell-Reqs"><a href="https://www.3lgm2.de/sparql" class="url-value">https://www.3lgm2.de/sparql</a></td></tr><tr id="1ec06d3a-00db-81dc-b89a-e45d3319e8ed"><td class="cell-title"><a href="kgs-list/iislod-test%201ec06d3a00db81dcb89ae45d3319e8ed.html">iislod-test</a></td><td class="cell-JoR;">Test Site, LOD Lab 317</td><td class="cell-Reqs"><a href="http://sparql.odw.tw" class="url-value">http://sparql.odw.tw</a></td></tr><tr id="1ec06d3a-00db-81ba-801c-fea5dad19d6e"><td class="cell-title"><a href="kgs-list/imagesnippets%201ec06d3a00db81ba801cfea5dad19d6e.html">imagesnippets</a></td><td class="cell-JoR;">Imagesnippets Image Descriptions</td><td class="cell-Reqs"><a href="http://www.imagesnippets.com/sparql/images" class="url-value">http://www.imagesnippets.com/sparql/images</a></td></tr><tr id="1ec06d3a-00db-8137-889f-e908daa3204d"><td class="cell-title"><a href="kgs-list/imgpedia%201ec06d3a00db8137889fe908daa3204d.html">imgpedia</a></td><td class="cell-JoR;">IMGpedia</td><td class="cell-Reqs"><a href="http://imgpedia.dcc.uchile.cl/sparql" class="url-value">http://imgpedia.dcc.uchile.cl/sparql</a></td></tr><tr id="1ec06d3a-00db-81f4-ad2a-d7274ca98719"><td class="cell-title"><a href="kgs-list/ispra-lod-ihi%201ec06d3a00db81f4ad2ad7274ca98719.html">ispra-lod-ihi</a></td><td class="cell-JoR;">ISPRA - Mitigation measures in Italy for national soil protection</td><td class="cell-Reqs"><a href="http://dati.isprambiente.it/sparql" class="url-value">http://dati.isprambiente.it/sparql</a></td></tr><tr id="1ec06d3a-00db-81c7-80a5-c99a3da6e656"><td class="cell-title"><a href="kgs-list/ispra-lod-place%201ec06d3a00db81c780a5c99a3da6e656.html">ispra-lod-place</a></td><td class="cell-JoR;">ISPRA - The administrative divisions of Italy (regions/provinces/municipalities)</td><td class="cell-Reqs"><a href="http://dati.isprambiente.it/sparql" class="url-value">http://dati.isprambiente.it/sparql</a></td></tr><tr id="1ec06d3a-00db-817d-95b7-e4dac62673e7"><td class="cell-title"><a href="kgs-list/ispra-lod-rmn%201ec06d3a00db817d95b7e4dac62673e7.html">ispra-lod-rmn</a></td><td class="cell-JoR;">ISPRA - The Italian National Tide Gauge Network (RMN)</td><td class="cell-Reqs"><a href="http://dati.isprambiente.it/sparql" class="url-value">http://dati.isprambiente.it/sparql</a></td></tr><tr id="1ec06d3a-00db-814b-bbcd-c7d1e2e19212"><td class="cell-title"><a href="kgs-list/ispra-lod-ron%201ec06d3a00db814bbbcdc7d1e2e19212.html">ispra-lod-ron</a></td><td class="cell-JoR;">ISPRA - The Italian Data Buoy Network (RON)</td><td class="cell-Reqs"><a href="http://dati.isprambiente.it/sparql" class="url-value">http://dati.isprambiente.it/sparql</a></td></tr><tr id="1ec06d3a-00db-81f3-b1cb-c662b1245b3c"><td class="cell-title"><a href="kgs-list/ispra-lod-sc%201ec06d3a00db81f3b1cbc662b1245b3c.html">ispra-lod-sc</a></td><td class="cell-JoR;">ISPRA - Soil Consumption Indicators in Italy</td><td class="cell-Reqs"><a href="http://dati.isprambiente.it/sparql" class="url-value">http://dati.isprambiente.it/sparql</a></td></tr><tr id="1ec06d3a-00db-81b8-b215-ee9bb6355c7f"><td class="cell-title"><a href="kgs-list/language-authority-list%201ec06d3a00db81b8b215ee9bb6355c7f.html">language-authority-list</a></td><td class="cell-JoR;"> Language Name Authority List </td><td class="cell-Reqs"><a href="http://publications.europa.eu/webapi/rdf/sparql" class="url-value">http://publications.europa.eu/webapi/rdf/sparql</a></td></tr><tr id="1ec06d3a-00db-8120-bb15-d6bf2281df2f"><td class="cell-title"><a href="kgs-list/libris%201ec06d3a00db8120bb15d6bf2281df2f.html">libris</a></td><td class="cell-JoR;">LIBRIS</td><td class="cell-Reqs"><a href="http://libris.kb.se/sparql" class="url-value">http://libris.kb.se/sparql</a></td></tr><tr id="1ec06d3a-00db-814d-8c16-cd35b5c1780e"><td class="cell-title"><a href="kgs-list/linkedgeodata%201ec06d3a00db814d8c16cd35b5c1780e.html">linkedgeodata</a></td><td class="cell-JoR;">LinkedGeoData</td><td class="cell-Reqs"><a href="http://linkedgeodata.org/sparql/" class="url-value">http://linkedgeodata.org/sparql/</a></td></tr><tr id="1ec06d3a-00db-817e-9a27-fb725243eea6"><td class="cell-title"><a href="kgs-list/lower-layer-super-output-areas%201ec06d3a00db817e9a27fb725243eea6.html">lower-layer-super-output-areas</a></td><td class="cell-JoR;">Lower Layer Super Output Areas</td><td class="cell-Reqs"><a href="http://opendatacommunities.org/sparql" class="url-value">http://opendatacommunities.org/sparql</a></td></tr><tr id="1ec06d3a-00db-813c-96db-c208f3dfa129"><td class="cell-title"><a href="kgs-list/LPIS_(Poland)%201ec06d3a00db813c96dbc208f3dfa129.html">LPIS_(Poland)</a></td><td class="cell-JoR;">Polish Land Parcel Information System (LPIS) dataset @PSNC</td><td class="cell-Reqs"><a href="https://www.foodie-cloud.org/sparql" class="url-value">https://www.foodie-cloud.org/sparql</a></td></tr><tr id="1ec06d3a-00db-81ef-92d8-ee32ab97e136"><td class="cell-title"><a href="kgs-list/LPIS_Czech_Republic%201ec06d3a00db81ef92d8ee32ab97e136.html">LPIS_Czech_Republic</a></td><td class="cell-JoR;">Land parcel dataset (LPIS) from Czech Republic @PSNC</td><td class="cell-Reqs"><a href="https://www.foodie-cloud.org/sparql" class="url-value">https://www.foodie-cloud.org/sparql</a></td></tr><tr id="1ec06d3a-00db-811d-80e4-df45945e5f94"><td class="cell-title"><a href="kgs-list/micro-coronavirus%201ec06d3a00db811d80e4df45945e5f94.html">micro-coronavirus</a></td><td class="cell-JoR;">Coronavirus dataset</td><td class="cell-Reqs"><a href="http://micro.semweb.csdb.cn/sparql" class="url-value">http://micro.semweb.csdb.cn/sparql</a></td></tr><tr id="1ec06d3a-00db-81ec-9f61-ce282b710634"><td class="cell-title"><a href="kgs-list/muziekweb%201ec06d3a00db81ec9f61ce282b710634.html">muziekweb</a></td><td class="cell-JoR;">Muziekweb</td><td class="cell-Reqs"><a href="https://data.muziekweb.nl/MuziekwebOrganization/Muziekweb/sparql/Muziekweb" class="url-value">https://data.muziekweb.nl/MuziekwebOrganization/Muziekweb/sparql/Muziekweb</a></td></tr><tr id="1ec06d3a-00db-810f-a2d5-ff1981b3a05a"><td class="cell-title"><a href="kgs-list/national-diet-library-authorities%201ec06d3a00db810fa2d5ff1981b3a05a.html">national-diet-library-authorities</a></td><td class="cell-JoR;">Web NDL Authorities - National Diet Library of Japan</td><td class="cell-Reqs"><a href="http://id.ndl.go.jp/auth/ndla/" class="url-value">http://id.ndl.go.jp/auth/ndla/</a></td></tr><tr id="1ec06d3a-00db-81b5-98a0-d1017874c45d"><td class="cell-title"><a href="kgs-list/national-diet-library-subject-headings%201ec06d3a00db81b598a0d1017874c45d.html">national-diet-library-subject-headings</a></td><td class="cell-JoR;">National Diet Library of Japan subject headings</td><td class="cell-Reqs"><a href="http://id.ndl.go.jp/auth/ndlsh/" class="url-value">http://id.ndl.go.jp/auth/ndlsh/</a></td></tr><tr id="1ec06d3a-00db-8123-9ad8-e923fd10b2a7"><td class="cell-title"><a href="kgs-list/nextprot%201ec06d3a00db81239ad8e923fd10b2a7.html">nextprot</a></td><td class="cell-JoR;">neXtProt</td><td class="cell-Reqs"><a href="https://sparql.nextprot.org/" class="url-value">https://sparql.nextprot.org/</a></td></tr><tr id="1ec06d3a-00db-81b4-8e3f-c84c15097ef2"><td class="cell-title"><a href="kgs-list/nomisma_org%201ec06d3a00db81b48e3fc84c15097ef2.html">nomisma_org</a></td><td class="cell-JoR;">Nomisma.org </td><td class="cell-Reqs"><a href="http://nomisma.org/query" class="url-value">http://nomisma.org/query</a></td></tr><tr id="1ec06d3a-00db-8145-9831-fdfcaf3ac946"><td class="cell-title"><a href="kgs-list/Nordine_Bittich%201ec06d3a00db81459831fdfcaf3ac946.html">Nordine_Bittich</a></td><td class="cell-JoR;">Curriculum Vitae</td><td class="cell-Reqs"><a href="https://bittich.be/sparql" class="url-value">https://bittich.be/sparql</a></td></tr><tr id="1ec06d3a-00db-81ad-92f2-fd9179f6214f"><td class="cell-title"><a href="kgs-list/Norway_Fishery_%201ec06d3a00db81ad92f2fd9179f6214f.html">Norway_Fishery_</a></td><td class="cell-JoR;">Norway fishery stocks dataset</td><td class="cell-Reqs"><a href="https://www.foodie-cloud.org/sparql" class="url-value">https://www.foodie-cloud.org/sparql</a></td></tr><tr id="1ec06d3a-00db-81b1-9b44-e0dc5b2d2261"><td class="cell-title"><a href="kgs-list/ocd%201ec06d3a00db81b19b44e0dc5b2d2261.html">ocd</a></td><td class="cell-JoR;">Italian Chamber of Deputies - official dataset</td><td class="cell-Reqs"><a href="http://dati.camera.it/sparql" class="url-value">http://dati.camera.it/sparql</a></td></tr><tr id="1ec06d3a-00db-8100-827f-db1c2097692f"><td class="cell-title"><a href="kgs-list/odc-lsoa%201ec06d3a00db8100827fdb1c2097692f.html">odc-lsoa</a></td><td class="cell-JoR;">Open Data Communities - Lower layer Super Output Areas</td><td class="cell-Reqs"><a href="http://opendatacommunities.org/sparql" class="url-value">http://opendatacommunities.org/sparql</a></td></tr><tr id="1ec06d3a-00db-816b-ad69-c2f23b9dbb67"><td class="cell-title"><a href="kgs-list/OLU%201ec06d3a00db816bad69c2f23b9dbb67.html">OLU</a></td><td class="cell-JoR;">Open Land Use</td><td class="cell-Reqs"><a href="https://www.foodie-cloud.org/sparql" class="url-value">https://www.foodie-cloud.org/sparql</a></td></tr><tr id="1ec06d3a-00db-8103-93c3-db3ee9b60e03"><td class="cell-title"><a href="kgs-list/Open_Land_Use%201ec06d3a00db810393c3db3ee9b60e03.html">Open_Land_Use</a></td><td class="cell-JoR;">Open Land Use @PSNC</td><td class="cell-Reqs"><a href="https://www.foodie-cloud.org/sparql" class="url-value">https://www.foodie-cloud.org/sparql</a></td></tr><tr id="1ec06d3a-00db-8184-ac1f-fbfbad157d12"><td class="cell-title"><a href="kgs-list/open-data-thesaurus%201ec06d3a00db8184ac1ffbfbad157d12.html">open-data-thesaurus</a></td><td class="cell-JoR;">Open Data Thesaurus</td><td class="cell-Reqs"><a href="http://vocabulary.semantic-web.at/PoolParty/sparql/OpenData" class="url-value">http://vocabulary.semantic-web.at/PoolParty/sparql/OpenData</a></td></tr><tr id="1ec06d3a-00db-8093-a390-d3cde03306b1"><td class="cell-title"><a href="kgs-list/orkg%201ec06d3a00db8093a390d3cde03306b1.html">orkg</a></td><td class="cell-JoR;">Open Research Knowledge Graph</td><td class="cell-Reqs"><a href="https://orkg.org/triplestore" class="url-value">https://orkg.org/triplestore</a></td></tr><tr id="1ec06d3a-00db-814d-a031-d56f15324838"><td class="cell-title"><a href="kgs-list/OTM%201ec06d3a00db814da031d56f15324838.html">OTM</a></td><td class="cell-JoR;">Open Transport Map @PSNC</td><td class="cell-Reqs"><a href="https://www.foodie-cloud.org/sparql" class="url-value">https://www.foodie-cloud.org/sparql</a></td></tr><tr id="1ec06d3a-00db-81f5-b587-ca13f7ad7c0b"><td class="cell-title"><a href="kgs-list/PGxLOD%201ec06d3a00db81f5b587ca13f7ad7c0b.html">PGxLOD</a></td><td class="cell-JoR;">PGxLOD</td><td class="cell-Reqs"><a href="https://pgxlod.loria.fr/sparql" class="url-value">https://pgxlod.loria.fr/sparql</a></td></tr><tr id="1ec06d3a-00db-81b7-8db2-c8094f51c21d"><td class="cell-title"><a href="kgs-list/publications_office_authority_tables%201ec06d3a00db81b78db2c8094f51c21d.html">publications_office_authority_tables</a></td><td class="cell-JoR;">Publications Office Authority tables</td><td class="cell-Reqs"><a href="http://publications.europa.eu/webapi/rdf/sparql" class="url-value">http://publications.europa.eu/webapi/rdf/sparql</a></td></tr><tr id="1ec06d3a-00db-81d6-a2ae-e6013a7bce4d"><td class="cell-title"><a href="kgs-list/racai-legalnero%201ec06d3a00db81d6a2aee6013a7bce4d.html">racai-legalnero</a></td><td class="cell-JoR;">Romanian Named Entity Recognition in the Legal domain (LegalNERo)</td><td class="cell-Reqs"><a href="https://relate.racai.ro/datasets/legalnero/query" class="url-value">https://relate.racai.ro/datasets/legalnero/query</a></td></tr><tr id="1ec06d3a-00db-81df-b8a5-ecc76e42deaf"><td class="cell-title"><a href="kgs-list/racai-llod-parseme-ro%201ec06d3a00db81dfb8a5ecc76e42deaf.html">racai-llod-parseme-ro</a></td><td class="cell-JoR;">PARSEME-Ro corpus</td><td class="cell-Reqs"><a href="https://relate.racai.ro/datasets/parseme/query" class="url-value">https://relate.racai.ro/datasets/parseme/query</a></td></tr><tr id="1ec06d3a-00db-814b-9809-f8e498c67757"><td class="cell-title"><a href="kgs-list/racai-llod-rolex%201ec06d3a00db814b9809f8e498c67757.html">racai-llod-rolex</a></td><td class="cell-JoR;">RoLEX</td><td class="cell-Reqs"><a href="https://relate.racai.ro/datasets/rolex/query" class="url-value">https://relate.racai.ro/datasets/rolex/query</a></td></tr><tr id="1ec06d3a-00db-8151-aea0-cecb7631052a"><td class="cell-title"><a href="kgs-list/racai-llod-rtasc%201ec06d3a00db8151aea0cecb7631052a.html">racai-llod-rtasc</a></td><td class="cell-JoR;">ROBIN Technical Acquisition Speech Corpus</td><td class="cell-Reqs"><a href="https://relate.racai.ro/datasets/rtasc/sparql" class="url-value">https://relate.racai.ro/datasets/rtasc/sparql</a></td></tr><tr id="1ec06d3a-00db-812e-a34c-d2072b2dff87"><td class="cell-title"><a href="kgs-list/racai-llod-simonero%201ec06d3a00db812ea34cd2072b2dff87.html">racai-llod-simonero</a></td><td class="cell-JoR;">SiMoNERo - the Romanian medical treebank</td><td class="cell-Reqs"><a href="https://relate.racai.ro/datasets/simonero/query" class="url-value">https://relate.racai.ro/datasets/simonero/query</a></td></tr><tr id="1ec06d3a-00db-8138-be28-e6a5757d5ecf"><td class="cell-title"><a href="kgs-list/RELD%201ec06d3a00db8138be28e6a5757d5ecf.html">RELD</a></td><td class="cell-JoR;">RELD</td><td class="cell-Reqs"><a href="http://reld.cs.upb.de:8890/sparql" class="url-value">http://reld.cs.upb.de:8890/sparql</a></td></tr><tr id="1ec06d3a-00db-81df-8de5-dd41286b21ad"><td class="cell-title"><a href="kgs-list/roceeh-road%201ec06d3a00db81df8de5dd41286b21ad.html">roceeh-road</a></td><td class="cell-JoR;">ROCEEH Out of Africa Database (ROAD)</td><td class="cell-Reqs"><a href="http://www.roceeh.uni-tuebingen.de:3030/road/sparql" class="url-value">http://www.roceeh.uni-tuebingen.de:3030/road/sparql</a></td></tr><tr id="1ec06d3a-00db-81d9-b59a-d31d11922e58"><td class="cell-title"><a href="kgs-list/sandre%201ec06d3a00db81d9b59ad31d11922e58.html">sandre</a></td><td class="cell-JoR;">Taxons </td><td class="cell-Reqs"><a href="http://id.eaufrance.fr/sparql" class="url-value">http://id.eaufrance.fr/sparql</a></td></tr><tr id="1ec06d3a-00db-8109-bb11-c4b83390472a"><td class="cell-title"><a href="kgs-list/scholarlydata%201ec06d3a00db8109bb11c4b83390472a.html">scholarlydata</a></td><td class="cell-JoR;">scholarlydata</td><td class="cell-Reqs"><a href="https://w3id.org/scholarlydata/sparql" class="url-value">https://w3id.org/scholarlydata/sparql</a></td></tr><tr id="1ec06d3a-00db-81c3-9ac8-fd5224a7e107"><td class="cell-title"><a href="kgs-list/slod%201ec06d3a00db81c39ac8fd5224a7e107.html">slod</a></td><td class="cell-JoR;">Linked Stage Graph</td><td class="cell-Reqs"><a href="http://slod.fiz-karlsruhe.de/sparql" class="url-value">http://slod.fiz-karlsruhe.de/sparql</a></td></tr><tr id="1ec06d3a-00db-81b2-bd8f-e07dbf6725da"><td class="cell-title"><a href="kgs-list/Smart_POI_dataset%201ec06d3a00db81b2bd8fe07dbf6725da.html">Smart_POI_dataset</a></td><td class="cell-JoR;">Smart Points Of Interest @PSNC</td><td class="cell-Reqs"><a href="https://www.foodie-cloud.org/sparql" class="url-value">https://www.foodie-cloud.org/sparql</a></td></tr><tr id="1ec06d3a-00db-8190-8ecb-ef016ed60b2f"><td class="cell-title"><a href="kgs-list/snik%201ec06d3a00db81908ecbef016ed60b2f.html">snik</a></td><td class="cell-JoR;">SNIK</td><td class="cell-Reqs"><a href="https://www.snik.eu/sparql" class="url-value">https://www.snik.eu/sparql</a></td></tr><tr id="1ec06d3a-00db-8158-8603-d20f220dd7c7"><td class="cell-title"><a href="kgs-list/socialsemweb-thesaurus%201ec06d3a00db81588603d20f220dd7c7.html">socialsemweb-thesaurus</a></td><td class="cell-JoR;">Social Semantic Web Thesaurus</td><td class="cell-Reqs"><a href="http://vocabulary.semantic-web.at/PoolParty/sparql/semweb" class="url-value">http://vocabulary.semantic-web.at/PoolParty/sparql/semweb</a></td></tr><tr id="1ec06d3a-00db-813b-bd72-ee9f8734e9f7"><td class="cell-title"><a href="kgs-list/Soil_maps%201ec06d3a00db813bbd72ee9f8734e9f7.html">Soil_maps</a></td><td class="cell-JoR;">Erosion-endangered soil zones dataset from Czech Republic @PSNC</td><td class="cell-Reqs"><a href="https://www.foodie-cloud.org/sparql" class="url-value">https://www.foodie-cloud.org/sparql</a></td></tr><tr id="1ec06d3a-00db-8108-a3fc-c783276a3c71"><td class="cell-title"><a href="kgs-list/ssf%201ec06d3a00db8108a3fcc783276a3c71.html">ssf</a></td><td class="cell-JoR;">Lexicon of Syntactic and Semantic Framework</td><td class="cell-Reqs"><a href="http://www.ss-framework.com/sparql" class="url-value">http://www.ss-framework.com/sparql</a></td></tr><tr id="1ec06d3a-00db-81cd-a976-d40101d92e34"><td class="cell-title"><a href="kgs-list/statistics-data-gov-uk%201ec06d3a00db81cda976d40101d92e34.html">statistics-data-gov-uk</a></td><td class="cell-JoR;">statistics.data.gov.uk</td><td class="cell-Reqs"><a href="http://statistics.data.gov.uk//sparql" class="url-value">http://statistics.data.gov.uk//sparql</a></td></tr><tr id="1ec06d3a-00db-8187-9aac-e6f70b554e05"><td class="cell-title"><a href="kgs-list/Suface_Forestie%CC%80re_Mondiale_1990-2016%201ec06d3a00db81879aace6f70b554e05.html">Suface_Forestière_Mondiale_1990-2016</a></td><td class="cell-JoR;">Suface Forestière Mondiale 1990-2016</td><td class="cell-Reqs"><a href="https://mmisw.org/sparql" class="url-value">https://mmisw.org/sparql</a></td></tr><tr id="1ec06d3a-00db-8116-b209-e3be29ede453"><td class="cell-title"><a href="kgs-list/Swift%201ec06d3a00db8116b209e3be29ede453.html">Swift</a></td><td class="cell-JoR;">Swift Vocabulary</td><td class="cell-Reqs"><a href="https://alma.uni.lu/sparql" class="url-value">https://alma.uni.lu/sparql</a></td></tr><tr id="1ec06d3a-00db-81c5-aad3-cd8ce7b2b947"><td class="cell-title"><a href="kgs-list/sztaki-lod%201ec06d3a00db81c5aad3cd8ce7b2b947.html">sztaki-lod</a></td><td class="cell-JoR;">National Digital Data Archive of Hungary (partial)</td><td class="cell-Reqs"><a href="http://lod.sztaki.hu/sparql" class="url-value">http://lod.sztaki.hu/sparql</a></td></tr><tr id="1ec06d3a-00db-81d1-a948-e93c8e576d65"><td class="cell-title"><a href="kgs-list/thesaurus-bncf%201ec06d3a00db81d1a948e93c8e576d65.html">thesaurus-bncf</a></td><td class="cell-JoR;">Thesaurus BNCF</td><td class="cell-Reqs"><a href="http://digitale.bncf.firenze.sbn.it/openrdf-workbench/repositories/NS/query" class="url-value">http://digitale.bncf.firenze.sbn.it/openrdf-workbench/repositories/NS/query</a></td></tr><tr id="1ec06d3a-00db-81a7-8a4d-e2cd690d3af7"><td class="cell-title"><a href="kgs-list/unesco-thesaurus%201ec06d3a00db81a78a4de2cd690d3af7.html">unesco-thesaurus</a></td><td class="cell-JoR;">UNESCO Thesaurus</td><td class="cell-Reqs"><a href="http://vocabularies.unesco.org/sparql" class="url-value">http://vocabularies.unesco.org/sparql</a></td></tr><tr id="1ec06d3a-00db-8107-8201-c42c76cfeb61"><td class="cell-title"><a href="kgs-list/unescothes%201ec06d3a00db81078201c42c76cfeb61.html">unescothes</a></td><td class="cell-JoR;">UNESCO Thesaurus</td><td class="cell-Reqs"><a href="http://skos.um.es/sparql/" class="url-value">http://skos.um.es/sparql/</a></td></tr><tr id="1ec06d3a-00db-81e1-92c9-e01b88fbef13"><td class="cell-title"><a href="kgs-list/UniProt%201ec06d3a00db81e192c9e01b88fbef13.html">UniProt</a></td><td class="cell-JoR;">UniProt</td><td class="cell-Reqs"><a href="https://sparql.uniprot.org/sparql" class="url-value">https://sparql.uniprot.org/sparql</a></td></tr><tr id="1ec06d3a-00db-811b-a7d9-cdaaa25579b6"><td class="cell-title"><a href="kgs-list/uniprot%201ec06d3a00db811ba7d9cdaaa25579b6.html">uniprot</a></td><td class="cell-JoR;">UniProt</td><td class="cell-Reqs"><a href="http://sparql.uniprot.org" class="url-value">http://sparql.uniprot.org</a></td></tr><tr id="1ec06d3a-00db-810d-a28a-db0a020388f0"><td class="cell-title"><a href="kgs-list/uniprot-taxonomy%201ec06d3a00db810da28adb0a020388f0.html">uniprot-taxonomy</a></td><td class="cell-JoR;">UniProtKB Taxonomy</td><td class="cell-Reqs"><a href="http://sparql.uniprot.org" class="url-value">http://sparql.uniprot.org</a></td></tr><tr id="1ec06d3a-00db-8162-9d0e-d3bae5429bc4"><td class="cell-title"><a href="kgs-list/uniprot-uniparc%201ec06d3a00db81629d0ed3bae5429bc4.html">uniprot-uniparc</a></td><td class="cell-JoR;">UniProt UniParc</td><td class="cell-Reqs"><a href="http://sparql.uniprot.org" class="url-value">http://sparql.uniprot.org</a></td></tr><tr id="1ec06d3a-00db-8153-835a-c3d48f5897f0"><td class="cell-title"><a href="kgs-list/uniprot-unipathway%201ec06d3a00db8153835ac3d48f5897f0.html">uniprot-unipathway</a></td><td class="cell-JoR;">UniProt UniPathway</td><td class="cell-Reqs"><a href="http://sparql.uniprot.org" class="url-value">http://sparql.uniprot.org</a></td></tr><tr id="1ec06d3a-00db-81af-a47a-d469ac4b1832"><td class="cell-title"><a href="kgs-list/uniprotkb%201ec06d3a00db81afa47ad469ac4b1832.html">uniprotkb</a></td><td class="cell-JoR;">UniProtKB</td><td class="cell-Reqs"><a href="https://sparql.uniprot.org/sparql" class="url-value">https://sparql.uniprot.org/sparql</a></td></tr><tr id="1ec06d3a-00db-81ff-86f4-c7de65a57547"><td class="cell-title"><a href="kgs-list/uniref%201ec06d3a00db81ff86f4c7de65a57547.html">uniref</a></td><td class="cell-JoR;">UniProt UniRef</td><td class="cell-Reqs"><a href="http://sparql.uniprot.org" class="url-value">http://sparql.uniprot.org</a></td></tr><tr id="1ec06d3a-00db-814f-b715-dbe729134c69"><td class="cell-title"><a href="kgs-list/universidad-de-cuenca-linkeddata%201ec06d3a00db814fb715dbe729134c69.html">universidad-de-cuenca-linkeddata</a></td><td class="cell-JoR;">Universidad de Cuenca - LinkedData</td><td class="cell-Reqs"><a href="http://190.15.141.102:8890/sparql" class="url-value">http://190.15.141.102:8890/sparql</a></td></tr><tr id="1ec06d3a-00db-81ae-980a-eb5f859cfc6d"><td class="cell-title"><a href="kgs-list/Urban_Atlas_Dataset%201ec06d3a00db81ae980aeb5f859cfc6d.html">Urban_Atlas_Dataset</a></td><td class="cell-JoR;">Urban Atlas dataset @PSNC</td><td class="cell-Reqs"><a href="https://www.foodie-cloud.org/sparql" class="url-value">https://www.foodie-cloud.org/sparql</a></td></tr><tr id="1ec06d3a-00db-8123-a8cb-e9eb2e7bbc33"><td class="cell-title"><a href="kgs-list/uriburner%201ec06d3a00db8123a8cbe9eb2e7bbc33.html">uriburner</a></td><td class="cell-JoR;">URIBurner</td><td class="cell-Reqs"><a href="http://linkeddata.uriburner.com/sparql" class="url-value">http://linkeddata.uriburner.com/sparql</a></td></tr><tr id="1ec06d3a-00db-81e4-88d4-e747b35e2b8c"><td class="cell-title"><a href="kgs-list/warsampo%201ec06d3a00db81e488d4e747b35e2b8c.html">warsampo</a></td><td class="cell-JoR;">WarSampo</td><td class="cell-Reqs"><a href="http://ldf.fi/warsa/sparql" class="url-value">http://ldf.fi/warsa/sparql</a></td></tr><tr id="1ec06d3a-00db-813f-b361-fdec9e65e131"><td class="cell-title"><a href="kgs-list/Water_Areas_Classification%201ec06d3a00db813fb361fdec9e65e131.html">Water_Areas_Classification</a></td><td class="cell-JoR;">FAO water areas classification as linked data @PSNC</td><td class="cell-Reqs"><a href="https://www.foodie-cloud.org/sparql" class="url-value">https://www.foodie-cloud.org/sparql</a></td></tr><tr id="1ec06d3a-00db-816b-9cec-d0cd52a25cc4"><td class="cell-title"><a href="kgs-list/Water_Buffer%201ec06d3a00db816b9cecd0cd52a25cc4.html">Water_Buffer</a></td><td class="cell-JoR;">Water buffer dataset from Czech Republic @PSNC</td><td class="cell-Reqs"><a href="https://www.foodie-cloud.org/sparql" class="url-value">https://www.foodie-cloud.org/sparql</a></td></tr><tr id="1ec06d3a-00db-8137-8b9c-e35a358fdd26"><td class="cell-title"><a href="kgs-list/webisalod%201ec06d3a00db81378b9ce35a358fdd26.html">webisalod</a></td><td class="cell-JoR;">WebIsALOD</td><td class="cell-Reqs"><a href="http://webisa.webdatacommons.org/sparql" class="url-value">http://webisa.webdatacommons.org/sparql</a></td></tr><tr id="1ec06d3a-00db-818f-93dd-c9bdc2ca729b"><td class="cell-title"><a href="kgs-list/wikidata%201ec06d3a00db818f93ddc9bdc2ca729b.html">wikidata</a></td><td class="cell-JoR;">Wikidata</td><td class="cell-Reqs"><a href="https://query.wikidata.org/sparql" class="url-value">https://query.wikidata.org/sparql</a></td></tr><tr id="1ec06d3a-00db-81f5-bad5-c8071100ed94"><td class="cell-title"><a href="kgs-list/wl-kg%201ec06d3a00db81f5bad5c8071100ed94.html">wl-kg</a></td><td class="cell-JoR;">The World Literature Knowledge Graph</td><td class="cell-Reqs"><a href="https://kgccc.di.unito.it/sparql/" class="url-value">https://kgccc.di.unito.it/sparql/</a></td></tr><tr id="1ec06d3a-00db-81e0-a012-f09d5b19ebfc"><td class="cell-title"><a href="kgs-list/ww1lod%201ec06d3a00db81e0a012f09d5b19ebfc.html">ww1lod</a></td><td class="cell-JoR;">World War 1 as Linked Open Data</td><td class="cell-Reqs"><a href="http://ldf.fi/ww1lod/sparql" class="url-value">http://ldf.fi/ww1lod/sparql</a></td></tr></tbody></table><br/><br/></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
