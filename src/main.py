@@ -15,7 +15,7 @@ for analysis_date in analysis_dates:
     correlation_matrix_spearman = KGsInferentialStatistics(os.path.join(here,f'../data/quality_analysis_results/{analysis_date}.csv'),f'Spearman_correlation_matrix_dimensions_{analysis_date}_Always_UP')
     correlation_matrix_spearman.calculate_spearman_correlation_matrix(QUALITY_DIMENSIONS,True,filter_ids=available_ids)
 
-    heatmap = GenerateHeatmap(os.path.join(here,f'../data/inferential_statistics_results/Spearman_correlation_matrix_dimensions_{analysis_date}_Always_UP.csv'),f'../data/charts/heatmap/Spearman_{analysis_date}_Always_UP',f'Spearman correlation matrix with quality data computed on {analysis_date} on KGs with SPARQL always UP')
+    heatmap = GenerateHeatmap(os.path.join(here,f'../data/inferential_statistics_results/Spearman_correlation_matrix_dimensions_{analysis_date}_Always_UP.csv'),f'../data/charts/heatmap/Spearman_{analysis_date}_Always_UP',f'Spearman correlation matrix with quality data computed on {analysis_date} on KGs with SPARQL endpoint always UP')
     heatmap.draw_heatmap()
 
 always_monitored = utils.get_always_observed_ids(analysis_dates[0])
