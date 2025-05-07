@@ -1,0 +1,143 @@
+KG id,KG name,SPARQL endpoint URL
+agrovoc,AGROVOC,https://agrovoc.fao.org/sparql
+AIM,Analytics India Magazine,https://analyticsindiamag.com/wp-json/wp/v2/
+allie-abbreviation-and-long-form-database-in-life-science,Allie Abbreviation And Long Form Database in Life Science,http://data.allie.dbcls.jp/sparql
+aragodbpedia,AragoDBPedia,http://opendata.aragon.es/sparql
+b3kat,"B3Kat - Library Union Catalogues of Bavaria, Berlin and Brandenburg",http://lod.b3kat.de/sparql
+bio2rdf-affymetrix,Bio2RDF::Affymetrix,http://affymetrix.bio2rdf.org/sparql
+bio2rdf-biomodels,Bio2RDF::Biomodels,http://biomodels.bio2rdf.org/sparql
+bio2rdf-bioportal,Bio2RDF::Bioportal,http://bioportal.bio2rdf.org/sparql
+bio2rdf-clinicaltrials,Bio2RDF::Clinicaltrials,http://clinicaltrials.bio2rdf.org/sparql
+bio2rdf-ctd,Bio2RDF::Ctd,http://ctd.bio2rdf.org/sparql
+bio2rdf-dbsnp,Bio2RDF::Dbsnp,http://dbsnp.bio2rdf.org/sparql
+bio2rdf-drugbank,Bio2RDF::Drugbank,http://drugbank.bio2rdf.org/sparql
+bio2rdf-genage,Bio2RDF::Genage,http://genage.bio2rdf.org/sparql
+bio2rdf-gendr,Bio2RDF::Gendr,http://gendr.bio2rdf.org/sparql
+bio2rdf-goa,Bio2RDF::Goa,http://goa.bio2rdf.org/sparql
+bio2rdf-hgnc,Bio2RDF::Hgnc,http://hgnc.bio2rdf.org/sparql
+bio2rdf-homologene,Bio2RDF::Homologene,http://homologene.bio2rdf.org/sparql
+bio2rdf-interpro,Bio2RDF::Interpro,http://interpro.bio2rdf.org/sparql
+bio2rdf-irefindex,Bio2RDF::Irefindex,http://irefindex.bio2rdf.org/sparql
+bio2rdf-kegg,Bio2RDF::KEGG,http://kegg.bio2rdf.org/sparql
+bio2rdf-lsr,Bio2RDF::Lsr,http://lsr.bio2rdf.org/sparql
+bio2rdf-mesh,Bio2RDF::Mesh,http://mesh.bio2rdf.org/sparql
+bio2rdf-mgi,Bio2RDF::Mgi,http://mgi.bio2rdf.org/sparql
+bio2rdf-ncbigene,Bio2RDF::Ncbigene,http://ncbigene.bio2rdf.org/sparql
+bio2rdf-ndc,Bio2RDF::Ndc,http://ndc.bio2rdf.org/sparql
+bncf-ns,Thesaurus BNCF,http://digitale.bncf.firenze.sbn.it/openrdf-workbench/repositories/NS/query
+bpr,BPR ? Bibliography of the Italian Parliament and electoral studies,http://dati.camera.it/sparql
+BVMC,Biblioteca Virtual Miguel de Cervantes,http://data.cervantesvirtual.com/sparql
+Catch_Record_(2014-_2019),Norway catch records dataset @PSNC,https://www.foodie-cloud.org/sparql
+cht,Cultural Heritage Thesaurus,https://digitaalerfgoed.poolparty.biz/PoolParty/sparql/term/id/cht
+comments-on-literature-in-literature,Comments on Literature in Literature (CoLiL),http://colil.dbcls.jp/sparql
+Corine_linked_dataset,Corine linked dataset @PSNC,https://www.foodie-cloud.org/sparql
+corporate-body,Corporate Body Named Authority List ,http://publications.europa.eu/webapi/rdf/sparql
+country-authority-list,Country Name Authority List,http://publications.europa.eu/webapi/rdf/sparql
+CPC,Cooperative Patent Classification,https://data.epo.org/linked-data/query
+cz-list-of-databoxes,List of Czech data boxes,https://linked.opendata.cz/sparql
+cz-nace,Czech statistical classification of economic activities in the European Community (CZ-NACE),https://linked.opendata.cz/sparql
+cz-nkod,Czech National Open Data Catalog in DCAT-AP v1.2,https://data.gov.cz/sparql
+cz-ovm,Institutions of public power of the Czech Republic,https://linked.opendata.cz/sparql
+cz-souhrnne-typy-ovm,Summary types of Czech institutions of public power,https://linked.opendata.cz/sparql
+data-bnf-fr,data.bnf.fr - Bibliothèque nationale de France,http://data.bnf.fr/sparql
+data-persee-fr,Persée in RDF,https://data.persee.fr/sparql
+datos-bcn-cl,Datos.bcn.cl,http://datos.bcn.cl/sparql
+dbnary,dbnary,http://kaiko.getalp.org/sparql
+dbpedia,DBpedia,http://dbpedia.org/sparql
+dbpedia-fr,DBpedia in French,http://fr.dbpedia.org/sparql
+dbpedia-ja,DBpedia in Japanese,http://ja.dbpedia.org/sparql
+ei2a,Aragon Interoperable Information Structure EI2A - aragon open data,https://opendata.aragon.es/sparql
+elte-digital-institutional-repository-edit,ELTE Digital Institutional Repository (EDIT),http://edit.elte.hu/sparql
+english-heritage-archaeological-sciences-thesaurus,English Heritage Archaeological Sciences Thesaurus,http://heritagedata.org/live/sparql
+english-heritage-building-materials-thesaurus,English Heritage Building Materials Thesaurus,http://heritagedata.org/live/sparql
+english-heritage-components-thesaurus,English Heritage Components Thesaurus,http://heritagedata.org/live/sparql
+english-heritage-event-types-thesaurus,English Heritage Event Types Thesaurus,http://heritagedata.org/live/sparql
+english-heritage-maritime-craft-thesaurus,English Heritage Maritime Craft Thesaurus,http://heritagedata.org/live/sparql
+english-heritage-monument-types-thesaurus,English Heritage Monument Types Thesaurus,http://heritagedata.org/live/sparql
+english-heritage-periods-list,English Heritage Periods List,http://heritagedata.org/live/sparql
+english-index-of-multiple-deprivation-ranking-2010,English Index of Multiple Deprivation Ranking 2010,http://opendatacommunities.org/sparql
+english-index-of-multiple-deprivation-score-2010,English Index of Multiple Deprivation Score 2010,http://opendatacommunities.org/sparql
+english-indices-of-multiple-deprivation,English Indices of Multiple Deprivation,http://opendatacommunities.org/sparql
+environment-agency-bathing-water-quality,Environment Agency Bathing Water Quality,http://environment.data.gov.uk/sparql/bwq/query
+EO_metadata,Micka (EO metadata) @PSNC,https://www.foodie-cloud.org/sparql
+ERAKG,Railway Infrastructure KG,https://prod.virtuoso.ecdp.tech.ec.europa.eu/sparql
+European_Patent_Information,EPO patents,https://data.epo.org/linked-data/query
+eurovoc,EuroVoc,http://publications.europa.eu/webapi/rdf/sparql
+FADN_(2019),Farm Accountancy Data Network (FADN) linked dataset from 2019 @PSNC,https://www.foodie-cloud.org/sparql
+fish-archaeological-objects-thesaurus,FISH Archaeological Objects Thesaurus,http://heritagedata.org/live/sparql
+Fishery_Stock_Dataset,Norway fishery stocks dataset @PSNC,https://www.foodie-cloud.org/sparql
+framester,Framester,https://w3id.org/framester/sparql
+geological-survey-of-austria-thesaurus,Geological Survey of Austria (GBA) - Thesaurus,http://resource.geolba.ac.at/PoolParty/sparql/GeologicUnit
+GTS,Geological Timescale,http://vocabs.ardc.edu.au/repository/api/sparql/csiro_international-chronostratigraphic-chart_geologic-time-scale-2020
+hito,HITO,https://hitontology.eu/sparql
+IHE,3LGM² IHE Ontology,https://www.3lgm2.de/sparql
+iislod-test,"Test Site, LOD Lab 317",http://sparql.odw.tw
+imagesnippets,Imagesnippets Image Descriptions,http://www.imagesnippets.com/sparql/images
+imgpedia,IMGpedia,http://imgpedia.dcc.uchile.cl/sparql
+ispra-lod-ihi,ISPRA - Mitigation measures in Italy for national soil protection,http://dati.isprambiente.it/sparql
+ispra-lod-place,ISPRA - The administrative divisions of Italy (regions/provinces/municipalities),http://dati.isprambiente.it/sparql
+ispra-lod-rmn,ISPRA - The Italian National Tide Gauge Network (RMN),http://dati.isprambiente.it/sparql
+ispra-lod-ron,ISPRA - The Italian Data Buoy Network (RON),http://dati.isprambiente.it/sparql
+ispra-lod-sc,ISPRA - Soil Consumption Indicators in Italy,http://dati.isprambiente.it/sparql
+language-authority-list, Language Name Authority List ,http://publications.europa.eu/webapi/rdf/sparql
+libris,LIBRIS,http://libris.kb.se/sparql
+linkedgeodata,LinkedGeoData,http://linkedgeodata.org/sparql/
+lower-layer-super-output-areas,Lower Layer Super Output Areas,http://opendatacommunities.org/sparql
+LPIS_(Poland),Polish Land Parcel Information System (LPIS) dataset @PSNC,https://www.foodie-cloud.org/sparql
+LPIS_Czech_Republic,Land parcel dataset (LPIS) from Czech Republic @PSNC,https://www.foodie-cloud.org/sparql
+micro-coronavirus,Coronavirus dataset,http://micro.semweb.csdb.cn/sparql
+muziekweb,Muziekweb,https://data.muziekweb.nl/MuziekwebOrganization/Muziekweb/sparql/Muziekweb
+national-diet-library-authorities,Web NDL Authorities - National Diet Library of Japan,http://id.ndl.go.jp/auth/ndla/
+national-diet-library-subject-headings,National Diet Library of Japan subject headings,http://id.ndl.go.jp/auth/ndlsh/
+nextprot,neXtProt,https://sparql.nextprot.org/
+nomisma_org,Nomisma.org ,http://nomisma.org/query
+Nordine_Bittich,Curriculum Vitae,https://bittich.be/sparql
+Norway_Fishery_,Norway fishery stocks dataset,https://www.foodie-cloud.org/sparql
+ocd,Italian Chamber of Deputies - official dataset,http://dati.camera.it/sparql
+odc-lsoa,Open Data Communities - Lower layer Super Output Areas,http://opendatacommunities.org/sparql
+OLU,Open Land Use,https://www.foodie-cloud.org/sparql
+open-data-thesaurus,Open Data Thesaurus,http://vocabulary.semantic-web.at/PoolParty/sparql/OpenData
+Open_Land_Use,Open Land Use @PSNC,https://www.foodie-cloud.org/sparql
+OTM,Open Transport Map @PSNC,https://www.foodie-cloud.org/sparql
+PGxLOD,PGxLOD,https://pgxlod.loria.fr/sparql
+publications_office_authority_tables,Publications Office Authority tables,http://publications.europa.eu/webapi/rdf/sparql
+racai-legalnero,Romanian Named Entity Recognition in the Legal domain (LegalNERo),https://relate.racai.ro/datasets/legalnero/query
+racai-llod-parseme-ro,PARSEME-Ro corpus,https://relate.racai.ro/datasets/parseme/query
+racai-llod-rolex,RoLEX,https://relate.racai.ro/datasets/rolex/query
+racai-llod-rtasc,ROBIN Technical Acquisition Speech Corpus,https://relate.racai.ro/datasets/rtasc/sparql
+racai-llod-simonero,SiMoNERo - the Romanian medical treebank,https://relate.racai.ro/datasets/simonero/query
+RELD,RELD,http://reld.cs.upb.de:8890/sparql
+roceeh-road,ROCEEH Out of Africa Database (ROAD),http://www.roceeh.uni-tuebingen.de:3030/road/sparql
+sandre,Taxons ,http://id.eaufrance.fr/sparql
+scholarlydata,scholarlydata,https://w3id.org/scholarlydata/sparql
+slod,Linked Stage Graph,http://slod.fiz-karlsruhe.de/sparql
+Smart_POI_dataset,Smart Points Of Interest @PSNC,https://www.foodie-cloud.org/sparql
+snik,SNIK,https://www.snik.eu/sparql
+socialsemweb-thesaurus,Social Semantic Web Thesaurus,http://vocabulary.semantic-web.at/PoolParty/sparql/semweb
+Soil_maps,Erosion-endangered soil zones dataset from Czech Republic @PSNC,https://www.foodie-cloud.org/sparql
+ssf,Lexicon of Syntactic and Semantic Framework,http://www.ss-framework.com/sparql
+statistics-data-gov-uk,statistics.data.gov.uk,http://statistics.data.gov.uk//sparql
+Suface_Forestière_Mondiale_1990-2016,Suface Forestière Mondiale 1990-2016,https://mmisw.org/sparql
+Swift,Swift Vocabulary,https://alma.uni.lu/sparql
+sztaki-lod,National Digital Data Archive of Hungary (partial),http://lod.sztaki.hu/sparql
+thesaurus-bncf,Thesaurus BNCF,http://digitale.bncf.firenze.sbn.it/openrdf-workbench/repositories/NS/query
+unesco-thesaurus,UNESCO Thesaurus,http://vocabularies.unesco.org/sparql
+unescothes,UNESCO Thesaurus,http://skos.um.es/sparql/
+UniProt,UniProt,https://sparql.uniprot.org/sparql
+uniprot,UniProt,http://sparql.uniprot.org
+uniprot-taxonomy,UniProtKB Taxonomy,http://sparql.uniprot.org
+uniprot-uniparc,UniProt UniParc,http://sparql.uniprot.org
+uniprot-unipathway,UniProt UniPathway,http://sparql.uniprot.org
+uniprotkb,UniProtKB,https://sparql.uniprot.org/sparql
+uniref,UniProt UniRef,http://sparql.uniprot.org
+universidad-de-cuenca-linkeddata,Universidad de Cuenca - LinkedData,http://190.15.141.102:8890/sparql
+Urban_Atlas_Dataset,Urban Atlas dataset @PSNC,https://www.foodie-cloud.org/sparql
+uriburner,URIBurner,http://linkeddata.uriburner.com/sparql
+warsampo,WarSampo,http://ldf.fi/warsa/sparql
+Water_Areas_Classification,FAO water areas classification as linked data @PSNC,https://www.foodie-cloud.org/sparql
+Water_Buffer,Water buffer dataset from Czech Republic @PSNC,https://www.foodie-cloud.org/sparql
+webisalod,WebIsALOD,http://webisa.webdatacommons.org/sparql
+wikidata,Wikidata,https://query.wikidata.org/sparql
+wl-kg,The World Literature Knowledge Graph,https://kgccc.di.unito.it/sparql/
+ww1lod,World War 1 as Linked Open Data,http://ldf.fi/ww1lod/sparql
+orkg,Open Research Knowledge Graph (ORKG),https://orkg.org/triplestore
