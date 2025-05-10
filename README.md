@@ -24,7 +24,7 @@ Then, execute it
 ```sh
 ./run_correlation_analysis.sh
 ```
-This script will create and activate a Python virtual environment, install the required dependencies using ```pip install```, and extract the files containing the QualityAnalyzer quality data (compressed to save space and adhere to GitHub’s size limits).
+This script will create and activate a Python virtual environment, install the required dependencies using ```pip install```, and extract the files containing the QualityAnalyzer quality data.
 At the end, the ```main.py``` file is executed, which calculates the correlation on the quality data from the four tools. The correlation matrices will be saved in [/data/inferential_statistics_results/](./data/inferential_statistics_results/), while the heatmaps will be stored in [/data/charts/heatmap](./data/charts/heatmap/)
 
 ### Windows users
