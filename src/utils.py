@@ -69,43 +69,6 @@ def convert_metrics_to_float(df,metrics_as_list,bool_metrics):
     df.replace('-', np.nan, inplace=True)
 
     return df
-    df = pd.read_csv(csv_file_path)
-    categories = {
-        "Accessibility" : {
-            "Availability" : 0,
-            "Licensing" : 0,
-            "Interlinking" : 0
-        },
-        "Representational" : {
-            "Representational-Conc." : 0,
-            "Interoperability" : 0,
-            "Interpretability" : 0,
-            "Versatility" : 0,
-            "Understandability" : 0
-        },
-        "Trust": {
-            "Believability" : 0
-        },
-        "Intrinsic": {
-            "Conciseness" : 0,
-            "Consistency" : 0,
-            "Accuracy" : 0,
-        }
-    }
-    for key in categories:
-        category = categories[key]
-        dimensions = category.keys()
-        if len(dimensions) > 1:
-            for metric in dimensions:
-                df[metric] = df[metric].astype(float)
-            df[key] = df[dimensions].sum(axis=1) / len(dimensions)
-        else:
-            df[key] = df[dimensions]
-
-    columns = list(categories.keys())
-    columns.append('Namespace')
-
-    df.to_csv(output_file,columns=columns,index=False)
 
 def verify_normal_distribution(csv_file_path,columns_to_verify):
     df = pd.read_csv(csv_file_path)
