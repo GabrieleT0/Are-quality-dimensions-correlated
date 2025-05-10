@@ -6,7 +6,7 @@ In the folder [/data/inferential_statistics_results/](./data/inferential_statist
 If, instead, you want to regenerate the matrices and graphs using ther provided quality data, refer to section [How to reproduce the correlation matrices](#how-to-reproduce-the-correlation-matrices-).
 
 # How to reproduce the correlation matrices 🔬
-Download the quality data computed by the quality assessment tool here: [https://drive.google.com/file/d/10oY0Vk-fdhzjlDoHE9_BHx-6M3mUrrS3/view?usp=sharing](https://drive.google.com/file/d/10oY0Vk-fdhzjlDoHE9_BHx-6M3mUrrS3/view?usp=sharing). Move the zip file downloaded into [/data/quality_analysis_results](./data/quality_analysis_results/).
+Download the quality data computed by the QualityAnalyzer tool here: [https://drive.google.com/file/d/10oY0Vk-fdhzjlDoHE9_BHx-6M3mUrrS3/view?usp=sharing](https://drive.google.com/file/d/10oY0Vk-fdhzjlDoHE9_BHx-6M3mUrrS3/view?usp=sharing). Move the zip file downloaded into [/data/quality_analysis_results](./data/quality_analysis_results/).
 
 ## Run the code 🚀
 **Requirements**
@@ -24,7 +24,7 @@ Then, execute it
 ```sh
 ./run_correlation_analysis.sh
 ```
-This script will create and activate a Python virtual environment, install the required dependencies using ```pip install```, and extract the files containing the KGHeartBeat quality data (compressed to save space and adhere to GitHub’s size limits).
+This script will create and activate a Python virtual environment, install the required dependencies using ```pip install```, and extract the files containing the QualityAnalyzer quality data (compressed to save space and adhere to GitHub’s size limits).
 At the end, the ```main.py``` file is executed, which calculates the correlation on the quality data from the four tools. The correlation matrices will be saved in [/data/inferential_statistics_results/](./data/inferential_statistics_results/), while the heatmaps will be stored in [/data/charts/heatmap](./data/charts/heatmap/)
 
 ### Windows users
@@ -42,7 +42,7 @@ python -m venv venv
 pip install -r requirements.txt
 ```
 
-3. Unzip the KGHeartBeat quality data with any software capable of decompressing a .zip file is suitable. The file to be decompressed are located in the folder [data/quality_analysis_results](./data/quality_analysis_results)
+3. Unzip the QualityAnalyzer quality data with any software capable of decompressing a .zip file is suitable. The file to be decompressed are located in the folder [data/quality_analysis_results](./data/quality_analysis_results)
 
 4. Run the main.py file
 
