@@ -2,10 +2,14 @@ import pandas as pd
 import numpy as np
 from sklearn.decomposition import PCA
 from sklearn.cluster import KMeans
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import seaborn as sns
 import glob
+from sklearn.preprocessing import StandardScaler
 from variables import QUALITY_DIMENSIONS
+import utils
 
 
 def calculate_clustering_on_raw_quality_dimensions(selected_columns, n_clusters=7):
@@ -16,29 +20,50 @@ def calculate_clustering_on_raw_quality_dimensions(selected_columns, n_clusters=
     csv_files = glob.glob('../data/quality_analysis_results/*.csv')
     data_frames = []
 
+    available_ids = utils.get_always_sparql_up(['2024-01-07','2024-04-07','2024-08-04','2024-12-01','2025-04-06'])
     for file in csv_files:
         df = pd.read_csv(file)
 
         valid_cols = [col for col in selected_columns if col in df.columns]
         if len(valid_cols) < len(selected_columns):
             continue
-
+        
+        df = df[df['KG id'].isin(available_ids)]
         df_selected = df[valid_cols].dropna()
-        data_frames.append(df_selected)
 
+        # Ensure numeric before transpose
+        df_selected = df_selected.apply(pd.to_numeric, errors='coerce')
+
+        # Drop rows with non-numeric values
+        if df_selected.isnull().values.any():
+            df_selected = df_selected.dropna()
+
+        # Transpose (rows = quality dimensions)
+        df_selected = df_selected.T
+        df_selected.index = valid_cols
+
+        data_frames.append(df_selected)
+    
     if not data_frames:
         print("No valid data found.")
         return
 
     # Concatenate all data
-    full_data = pd.concat(data_frames, ignore_index=True).dropna()
+    full_data = pd.concat(data_frames, axis=1).dropna()
+
+    # Standardize
+    scaler = StandardScaler()
+    quality_scaled_T = scaler.fit_transform(full_data)
 
     # PCA
     pca = PCA(n_components=2)
-    X_pca = pca.fit_transform(full_data.values)
+    X_pca = pca.fit_transform(quality_scaled_T)
 
     # Explained variance
     print("Explained variance ratio:", pca.explained_variance_ratio_)
+
+    # Labels = quality dimension names
+    quality_dimension_labels = full_data.index.tolist()
 
     # PCA-only plot
     plt.figure(figsize=(10, 7))
@@ -60,8 +85,12 @@ def calculate_clustering_on_raw_quality_dimensions(selected_columns, n_clusters=
     sns.scatterplot(x=X_pca[:, 0], y=X_pca[:, 1], hue=labels, palette='Set2', s=80)
     
     # Optional: Plot centroids
-    centers = kmeans.cluster_centers_
-    plt.scatter(centers[:, 0], centers[:, 1], c='black', s=150, alpha=0.6, marker='X', label='Centroids')
+    plt.figure(figsize=(10, 7))
+    sns.scatterplot(x=X_pca[:, 0], y=X_pca[:, 1], hue=labels, palette='Set2', s=80)
+    for i, label in enumerate(quality_dimension_labels):
+        plt.annotate(label, (X_pca[i, 0], X_pca[i, 1]), fontsize=9)
+    plt.scatter(kmeans.cluster_centers_[:, 0], kmeans.cluster_centers_[:, 1],
+                c='black', s=150, alpha=0.6, marker='X', label='Centroids')
 
     plt.title("PCA + KMeans Clustering of Raw Quality Dimensions")
     plt.xlabel("Principal Component 1")
@@ -70,7 +99,6 @@ def calculate_clustering_on_raw_quality_dimensions(selected_columns, n_clusters=
     plt.grid(True)
     plt.tight_layout()
     plt.savefig("../data/charts/pca_kmeans/raw_quality_data_pca_kmeans.png")
-    plt.show()
 
 def calculate_clustering_on_pairwise_correlation(n_clusters=7):
     """
@@ -141,7 +169,5 @@ def calculate_clustering_on_pairwise_correlation(n_clusters=7):
     plt.grid(True)
     plt.tight_layout()
     plt.savefig('../data/charts/pca_kmeans/pairwise_correlation_pca_kmeans.png')
-    plt.show()
 
 calculate_clustering_on_raw_quality_dimensions(QUALITY_DIMENSIONS,n_clusters=6)
-calculate_clustering_on_pairwise_correlation(n_clusters=6)
