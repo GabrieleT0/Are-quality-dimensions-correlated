@@ -174,7 +174,7 @@ class KGsInferentialStatistics:
 
         final_matrix.to_csv(self.output_file + '.csv')
 
-    def calculate_spearman_correlation_matrix(self,columns_to_use,sparql_status = True, replace_columns = False, filter_ids=None):
+    def calculate_spearman_correlation_matrix(self,columns_to_use,sparql_status = True, replace_columns = False, filter_ids=None, metrics = False):
         '''
             Generate the Spearman Correlation matrix by using the values in the columns columns_to_use from the CSV file.      
 
@@ -208,9 +208,20 @@ class KGsInferentialStatistics:
 
             df = df.sort_index(axis=1)
 
+            if metrics:
+                df = df.replace('-', np.nan)
+                df = df.replace('Available',1)
+                df = df.replace('offline',0)
+                df = df.replace('True',1)
+                df = df.replace('False',0)
+                df = df.replace(True,1)
+                df = df.replace(False,0)
+                df = df.apply(pd.to_numeric, errors='coerce')
+            else:
             # Delete the column to avoid errors
-            columns_to_drop = ['Sparql endpoint', 'KG name', 'SPARQL endpoint URL', 'Dataset URL', 'KG id']
-            df = df.drop(columns=columns_to_drop, errors='ignore')
+                columns_to_drop = ['Sparql endpoint', 'KG name', 'SPARQL endpoint URL', 'Dataset URL', 'KG id']
+                df = df.drop(columns=columns_to_drop, errors='ignore')
+
         else:
             if 'Sparql endpoint' in columns_to_use:
                 columns_to_use = [item for item in columns_to_use if item != "Sparql endpoint"] 
@@ -237,11 +248,16 @@ class KGsInferentialStatistics:
             df.drop(columns=['Dataset URL'], inplace=True)
         if 'KG name' in df.columns:
             df.drop(columns=['KG name'], inplace=True)
-        if 'Sparql endpoint' in df.columns:
-            df.drop(columns=['Sparql endpoint'], inplace=True)
+        #if 'Sparql endpoint' in df.columns:
+        #    df.drop(columns=['Sparql endpoint'], inplace=True)
 
         df.columns = df.columns.str.replace('score', '', regex=False)
         df.columns = df.columns.str.strip()
+        if metrics:
+            df = df.dropna(axis=1, how='all')
+
+            df = df.dropna(axis=0, how='all')
+
         df_clean = df.dropna()
         rho = df.corr('spearman')
         pval = df.corr(method=lambda x, y: spearmanr(x, y)[1]) - np.eye(*rho.shape)
