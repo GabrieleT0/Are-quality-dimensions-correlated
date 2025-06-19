@@ -68,6 +68,10 @@ def calculate_clustering_on_raw_quality_dimensions(selected_columns, n_clusters=
     # PCA-only plot
     plt.figure(figsize=(10, 7))
     sns.scatterplot(x=X_pca[:, 0], y=X_pca[:, 1], s=80)
+    for i, label in enumerate(quality_dimension_labels):
+        offset_x = 0.1 if i % 2 == 0 else -0.1
+        offset_y = 1.5 if i % 3 == 0 else -1.5
+        plt.annotate(label, (X_pca[i, 0] + offset_x, X_pca[i, 1] + offset_y), fontsize=9)
     plt.title("PCA of Raw Quality Dimensions")
     plt.xlabel("Principal Component 1")
     plt.ylabel("Principal Component 2")
@@ -88,7 +92,9 @@ def calculate_clustering_on_raw_quality_dimensions(selected_columns, n_clusters=
     plt.figure(figsize=(10, 7))
     sns.scatterplot(x=X_pca[:, 0], y=X_pca[:, 1], hue=labels, palette='Set2', s=80)
     for i, label in enumerate(quality_dimension_labels):
-        plt.annotate(label, (X_pca[i, 0], X_pca[i, 1]), fontsize=9)
+        offset_x = 0.1 if i % 2 == 0 else -0.1
+        offset_y = 1.5 if i % 3 == 0 else -1.5
+        plt.annotate(label, (X_pca[i, 0] + offset_x, X_pca[i, 1] + offset_y), fontsize=9)
     plt.scatter(kmeans.cluster_centers_[:, 0], kmeans.cluster_centers_[:, 1],
                 c='black', s=150, alpha=0.6, marker='X', label='Centroids')
 
