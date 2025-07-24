@@ -1,5 +1,5 @@
 # Are quality dimensions correlated? 🔎
-This repository contains the code to reproduce the results presented in the publication *Are quality dimensions correlated? An empirical investigation*, submitted as research paper to ISWC 2025. From the following GitHub pages you can directly view the corrrelation matrices (as heatmaps) for each tool and summary tables for the 4 tools analyzed: 
+This repository contains the code to reproduce the results presented in the publication *Are quality dimensions correlated? An empirical investigation*, accepted as research paper to ISWC 2025. From the following GitHub pages you can directly view the corrrelation matrices (as heatmaps) for each tool and summary tables for the 4 tools analyzed: 
 
 In the folder [/data/inferential_statistics_results/](./data/inferential_statistics_results/), the correlation matrices are already available as CSV files. Meanwhile, in [/data/charts/heatmap](./data/charts/heatmap/), heatmaps created from the CSV files are provided for a graphical visualization of the correlation matrices.
 
