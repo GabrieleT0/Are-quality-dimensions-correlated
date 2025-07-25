@@ -1,0 +1,692 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Full tables of the RQs</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="15c06d3a-00db-800a-aedd-c8e006fe009a" class="page serif"><header><div class="page-header-icon undefined"><img class="icon" src="https://www.notion.so/icons/table_blue.svg"/></div><h1 class="page-title">Full tables of the RQs</h1><p class="page-description"></p></header><div class="page-body"><nav id="15f06d3a-00db-80d0-b6f1-d94fea5ab855" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#15e06d3a-00db-80c6-a882-e31a5b38bc31">RQ1 - Table for RQ1 (table 1. in the paper)</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#16306d3a-00db-804b-a7c2-f485d4712295">RQ2 - Correlation matrices for RQ2 (table 2. in the paper, expanded for every tool)</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#16406d3a-00db-807a-afca-cb472fad91c4">Complete Table for RQ2</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#16406d3a-00db-80dc-bff0-e5e3bb7e553c">Correlation matrices by tool, only on metrics in common between at least 2 tools</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#16306d3a-00db-8080-a417-ca59582dcbf9">KGHeartBeat</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#16306d3a-00db-80bd-82dc-c8e5d0f08648">LUZZU</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#16306d3a-00db-80df-9f22-e60d0f4fe121">YummyData</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#16306d3a-00db-809b-b56e-cabce34a507a">SPARQLES </a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#16306d3a-00db-80d0-80fe-c34160861c1e">RQ3 - KGHB23 vs KGHB24 (table 3. in the paper)</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#16306d3a-00db-80a2-a890-f1900db0f547">KGHB 2023-11-27</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#16306d3a-00db-8058-96cf-c47583537e55">KGHB 2024-11-24</a></div></nav><figure id="15c06d3a-00db-80d3-b3e6-f733d428160f" class="link-to-page"><a href="../index.html">Are quality dimensions correlated? An empirical investigation</a></figure><h1 id="15e06d3a-00db-80c6-a882-e31a5b38bc31" class="">RQ1 - Table for RQ1 (table 1. in the paper)</h1><p id="15f06d3a-00db-800d-8fa9-df88ccc1a969" class="">Each cell displays Spearman’s rank correlation coefficient alongside the corresponding p-value, with significance levels denoted by three asterisks (***) for p-values less than 0.001. The results are presented for the four tools under consideration in the following order: LUZZU | KGHB24 | Yummy | SPARQLES. Pairs of dimensions with at least moderate correlation (i.e., an absolute correlation coefficient of 0.5 or greater) are highlighted in <mark class="highlight-red">red</mark> for emphasis. The symbol &#x27;<strong>-</strong>&#x27; means that the quality measurement for that pair of dimensions is not supported by the tool. </p><p id="16306d3a-00db-802e-802d-fb48af7e17dd" class="">Legend: LUZZU | KGHB24 | YummyData | SPARQLES<br/><br/><mark class="highlight-teal_background">ACCESSIBILITY </mark>- <mark class="highlight-orange_background">CONTEXTUAL</mark> - <mark class="highlight-blue_background">DATASET DYNAMICITY</mark> - <mark class="highlight-purple_background">INTRINSIC</mark> - <mark class="highlight-red_background">REPRESENTATIONAL</mark> - <mark class="highlight-gray_background">TRUST</mark></p><table id="16306d3a-00db-80d2-9569-e44f8f8c0070" class="simple-table"><thead class="simple-table-header"><tr id="16306d3a-00db-80a5-8630-e0f267efd2bd"><th id="]Oqo" class="simple-table-header-color simple-table-header" style="width:254px">Luzzu | KGHB | YUMMY | SPARQLES</th><th id="OwFA" class="simple-table-header-color simple-table-header"><mark class="highlight-teal_background">Availability</mark></th><th id="f]_T" class="simple-table-header-color simple-table-header" style="width:147px"><mark class="highlight-teal_background">Interlinking</mark></th><th id="Tp\;" class="simple-table-header-color simple-table-header" style="width:166.59375px"><mark class="highlight-teal_background">Licensing</mark></th><th id="VhLw" class="simple-table-header-color simple-table-header" style="width:191px"><mark class="highlight-teal_background">Performance</mark></th><th id="_U@w" class="simple-table-header-color simple-table-header" style="width:137px"><mark class="highlight-teal_background">Security</mark></th><th id="SSC[" class="simple-table-header-color simple-table-header"><mark class="highlight-orange_background">Completeness</mark></th><th id="JyV|" class="simple-table-header-color simple-table-header" style="width:212px"><mark class="highlight-orange_background">Amount of data</mark></th><th id="NRSi" class="simple-table-header-color simple-table-header" style="width:178px"><mark class="highlight-blue_background">Currency</mark></th><th id="`^Gv" class="simple-table-header-color simple-table-header" style="width:154px"><mark class="highlight-blue_background">Timeliness</mark></th><th id="Xllj" class="simple-table-header-color simple-table-header" style="width:166px"><mark class="highlight-purple_background">Accuracy</mark></th><th id="Aum@" class="simple-table-header-color simple-table-header" style="width:159px"><mark class="highlight-purple_background">Conciseness</mark></th><th id="EYrP" class="simple-table-header-color simple-table-header" style="width:183px"><mark class="highlight-purple_background">Consistency</mark></th><th id=";;G}" class="simple-table-header-color simple-table-header" style="width:199px"><mark class="highlight-red_background">Interoperability</mark></th><th id="bgal" class="simple-table-header-color simple-table-header" style="width:189px"><mark class="highlight-red_background">Interpretability</mark></th><th id="&lt;YS;" class="simple-table-header-color simple-table-header" style="width:201px"><mark class="highlight-red_background">Rep. conciseness</mark></th><th id="BkYg" class="simple-table-header-color simple-table-header" style="width:179px"><mark class="highlight-red_background">Understandability</mark></th><th id="z?GD" class="simple-table-header-color simple-table-header" style="width:211px"><mark class="highlight-red_background">Versatility</mark></th><th id="SM_G" class="simple-table-header-color simple-table-header" style="width:205px"><mark class="highlight-gray_background">Believability</mark></th><th id="KO{^" class="simple-table-header-color simple-table-header" style="width:160px"><mark class="highlight-gray_background">Reputation</mark></th><th id="J[;J" class="simple-table-header-color simple-table-header" style="width:144px"><mark class="highlight-gray_background">Verifiability</mark></th></tr></thead><tbody><tr id="16306d3a-00db-80d1-a22f-dfeadecb0055"><th id="]Oqo" class="simple-table-header-color simple-table-header" style="width:254px"><mark class="highlight-teal_background">Availability</mark></th><td id="OwFA" class="">1</td><td id="f]_T" class="" style="width:147px">- | 0.12 | 0.33 ** | -</td><td id="Tp\;" class="" style="width:166.59375px">0.04 | 0.26 *** | 0.16 | -</td><td id="VhLw" class="" style="width:191px">- | 0.15 * | -0.17 | <mark class="highlight-red"><strong>0.64 ***</strong></mark></td><td id="_U@w" class="" style="width:137px">- | - 0.29 *** | - | -</td><td id="SSC[" class="">- | 0.14 * | - | -</td><td id="JyV|" class="" style="width:212px">- | -0.02 | 0.04 | <strong>0.72 ***</strong></td><td id="NRSi" class="" style="width:178px">- | - 0.14 *| 0.13 | -</td><td id="`^Gv" class="" style="width:154px">- | -0.20 ** | - | -</td><td id="Xllj" class="" style="width:166px">0.24 ** | -0.05 | - | -</td><td id="Aum@" class="" style="width:159px">0 | -0.24 *** | - | -</td><td id="EYrP" class="" style="width:183px">0.24 ** | -0.24 *** | - | -</td><td id=";;G}" class="" style="width:199px">-0.30 *** | 0.18 ** | 0.09 | -</td><td id="bgal" class="" style="width:189px">-0.28 ** | -0.14 * | - | -</td><td id="&lt;YS;" class="" style="width:201px">0.27 ** | 0.01 | <mark class="highlight-red"><strong>0.57 ***</strong></mark><mark class="highlight-red"> </mark>| -</td><td id="BkYg" class="" style="width:179px">-0.14 | -0.04 | - | -</td><td id="z?GD" class="" style="width:211px">-0.09 | 0.26 *** | 0.26 * | -</td><td id="SM_G" class="" style="width:205px">0.03 | 0.19 ** | - | -</td><td id="KO{^" class="" style="width:160px">- | -0.08 | - | -</td><td id="J[;J" class="" style="width:144px">- | -0.05 | - | -</td></tr><tr id="16306d3a-00db-803c-9d38-e299ecc074b1"><th id="]Oqo" class="simple-table-header-color simple-table-header" style="width:254px"><mark class="highlight-teal_background">Interlinking</mark></th><td id="OwFA" class=""></td><td id="f]_T" class="" style="width:147px">1</td><td id="Tp\;" class="" style="width:166.59375px">- | 0.37 *** | 0.27 * | -</td><td id="VhLw" class="" style="width:191px">- | 0.09 | -0.06 | -</td><td id="_U@w" class="" style="width:137px">- | -0.05 | - | -</td><td id="SSC[" class="">- | 0.21 ** | - | -</td><td id="JyV|" class="" style="width:212px">- | 0.31 *** | 0.03 | -</td><td id="NRSi" class="" style="width:178px">- | 0.40 *** | 0.38 ** | -</td><td id="`^Gv" class="" style="width:154px">- | 0.33 *** | - | -</td><td id="Xllj" class="" style="width:166px">- | 0.35 *** | - | -</td><td id="Aum@" class="" style="width:159px">- | -0.05 | - | -</td><td id="EYrP" class="" style="width:183px">- | 0.32 *** | - | -</td><td id=";;G}" class="" style="width:199px">- | -0.22 ** | 0.27 * | -</td><td id="bgal" class="" style="width:189px">- | 0.37 *** | - | -</td><td id="&lt;YS;" class="" style="width:201px">- | -0.03 | 0.28 * | -</td><td id="BkYg" class="" style="width:179px">- | 0.39 ***| - | -</td><td id="z?GD" class="" style="width:211px">0.24 ** | 0.07 | <mark class="highlight-red"><strong>0.53 ***</strong></mark> | -</td><td id="SM_G" class="" style="width:205px">- | 0.31 *** | - | -</td><td id="KO{^" class="" style="width:160px">- | 0.15 * | - | -</td><td id="J[;J" class="" style="width:144px">- | 0.43 *** | - | -</td></tr><tr id="16306d3a-00db-808d-b68a-f46dac2da2ed"><th id="]Oqo" class="simple-table-header-color simple-table-header" style="width:254px"><mark class="highlight-teal_background">Licensing</mark></th><td id="OwFA" class=""></td><td id="f]_T" class="" style="width:147px"></td><td id="Tp\;" class="" style="width:166.59375px">1</td><td id="VhLw" class="" style="width:191px">- | 0.31 *** | -0.17 | -</td><td id="_U@w" class="" style="width:137px">- | -0.29 *** | - | -</td><td id="SSC[" class="">- | 0.15 * | - | -</td><td id="JyV|" class="" style="width:212px">- | 0.11 | 0.09 | -</td><td id="NRSi" class="" style="width:178px">- | 0.31 *** | <mark class="highlight-red"><strong>0.63 ***</strong></mark> | -</td><td id="`^Gv" class="" style="width:154px">- | 0.30 *** | - | -</td><td id="Xllj" class="" style="width:166px">-0.02 | 0.38 *** | - | -</td><td id="Aum@" class="" style="width:159px">-0.09 | 0.11 | - | -</td><td id="EYrP" class="" style="width:183px">0.20 * | 0.37 *** | - | -</td><td id=";;G}" class="" style="width:199px">-0.13 | -0.14 * | 0.27 * | -</td><td id="bgal" class="" style="width:189px">0.09 | 0.26 *** | - | -</td><td id="&lt;YS;" class="" style="width:201px">0.14 | 0.01 | 0.06 | -</td><td id="BkYg" class="" style="width:179px">0.06 | 0.34 *** | - | -</td><td id="z?GD" class="" style="width:211px">0 | -0.08 | 0.23 | -</td><td id="SM_G" class="" style="width:205px">0.45 *** | 0.48 ***| - | -</td><td id="KO{^" class="" style="width:160px">- | 0.33 *** | - | -</td><td id="J[;J" class="" style="width:144px">- | <mark class="highlight-red"><strong>0.52 ***</strong></mark> | - | -</td></tr><tr id="16306d3a-00db-802f-bb71-ead5d00e5f23"><th id="]Oqo" class="simple-table-header-color simple-table-header" style="width:254px"><mark class="highlight-teal_background">Performance</mark></th><td id="OwFA" class=""></td><td id="f]_T" class="" style="width:147px"></td><td id="Tp\;" class="" style="width:166.59375px"></td><td id="VhLw" class="" style="width:191px">1</td><td id="_U@w" class="" style="width:137px">- | -0.45 *** | - | -</td><td id="SSC[" class="">- | 0.01 | - | -</td><td id="JyV|" class="" style="width:212px">- | -0.10 | <mark class="highlight-red"><strong>0.56 ***</strong></mark><strong> | </strong><mark class="highlight-red"><strong>0.74 ***</strong></mark></td><td id="NRSi" class="" style="width:178px">- | 0.22 ** | -0.08 | -</td><td id="`^Gv" class="" style="width:154px">- | 0.14 * | - | -</td><td id="Xllj" class="" style="width:166px">- | 0.16 * | - | -</td><td id="Aum@" class="" style="width:159px">- | -0.01 | - | -</td><td id="EYrP" class="" style="width:183px">- | 0.16 * | - | -</td><td id=";;G}" class="" style="width:199px">- | 0.12 | 0.14 | -</td><td id="bgal" class="" style="width:189px">- | 0.13 | - | -</td><td id="&lt;YS;" class="" style="width:201px">- | 0.10 | 0.12 | -</td><td id="BkYg" class="" style="width:179px">- | 0.09 | - | -</td><td id="z?GD" class="" style="width:211px">- | 0.09 | 0.09 | -</td><td id="SM_G" class="" style="width:205px">- | 0.29 *** | - | -</td><td id="KO{^" class="" style="width:160px">- | 0.03 | - | -</td><td id="J[;J" class="" style="width:144px">- | 0.35 *** | - | -</td></tr><tr id="16306d3a-00db-8043-9435-cb1fa2268272"><th id="]Oqo" class="simple-table-header-color simple-table-header" style="width:254px"><mark class="highlight-teal_background">Security</mark></th><td id="OwFA" class=""></td><td id="f]_T" class="" style="width:147px"></td><td id="Tp\;" class="" style="width:166.59375px"></td><td id="VhLw" class="" style="width:191px"></td><td id="_U@w" class="" style="width:137px">1</td><td id="SSC[" class="">- | 0.03 | - | -</td><td id="JyV|" class="" style="width:212px">- | 0.03 | - | -</td><td id="NRSi" class="" style="width:178px">- | -0.03 | - | -</td><td id="`^Gv" class="" style="width:154px">- | -0.11 | - | -</td><td id="Xllj" class="" style="width:166px">- | -0.05 | - | -</td><td id="Aum@" class="" style="width:159px">- | 0.16 * | - | -</td><td id="EYrP" class="" style="width:183px">- | -0.08 | - | -</td><td id=";;G}" class="" style="width:199px">- | -0.02 | - | -</td><td id="bgal" class="" style="width:189px">- | 0.07 | - | -</td><td id="&lt;YS;" class="" style="width:201px">- | 0.09 | - | -</td><td id="BkYg" class="" style="width:179px">- | 0.08 | - | -</td><td id="z?GD" class="" style="width:211px">- | 0.09 | - | -</td><td id="SM_G" class="" style="width:205px">- | -0.22 ** | - | -</td><td id="KO{^" class="" style="width:160px">- | 0.14 * | - | -</td><td id="J[;J" class="" style="width:144px">- | -0.17 * | - | -</td></tr><tr id="16306d3a-00db-8076-87e2-f279207cb8ea"><th id="]Oqo" class="simple-table-header-color simple-table-header" style="width:254px"><mark class="highlight-orange_background">Completeness</mark></th><td id="OwFA" class=""></td><td id="f]_T" class="" style="width:147px"></td><td id="Tp\;" class="" style="width:166.59375px"></td><td id="VhLw" class="" style="width:191px"></td><td id="_U@w" class="" style="width:137px"></td><td id="SSC[" class="">1</td><td id="JyV|" class="" style="width:212px">- | 0.06 | - | -</td><td id="NRSi" class="" style="width:178px">- | 0.11 | - | -</td><td id="`^Gv" class="" style="width:154px">- | -0.23 *** | - | -</td><td id="Xllj" class="" style="width:166px">- | 0.07 | - | -</td><td id="Aum@" class="" style="width:159px">- | 0.12 | - | -</td><td id="EYrP" class="" style="width:183px">- | -0.01 | - | -</td><td id=";;G}" class="" style="width:199px">- | 0.06 | - | -</td><td id="bgal" class="" style="width:189px">- | 0.13 | - | -</td><td id="&lt;YS;" class="" style="width:201px">- | 0.17 * | - | -</td><td id="BkYg" class="" style="width:179px">- | 0.11 | - | -</td><td id="z?GD" class="" style="width:211px">- | 0.18 ** | - | -</td><td id="SM_G" class="" style="width:205px">- | 0.05 | - | -</td><td id="KO{^" class="" style="width:160px">- | 0.33 *** | - | -</td><td id="J[;J" class="" style="width:144px">- | 0.03 | - | -</td></tr><tr id="16306d3a-00db-8063-b76a-f6a2ecaf019a"><th id="]Oqo" class="simple-table-header-color simple-table-header" style="width:254px"><mark class="highlight-orange_background">Amount of data</mark></th><td id="OwFA" class=""></td><td id="f]_T" class="" style="width:147px"></td><td id="Tp\;" class="" style="width:166.59375px"></td><td id="VhLw" class="" style="width:191px"></td><td id="_U@w" class="" style="width:137px"></td><td id="SSC[" class=""></td><td id="JyV|" class="" style="width:212px">1</td><td id="NRSi" class="" style="width:178px">- | 0.28 *** | 0.13 | -</td><td id="`^Gv" class="" style="width:154px">- | 0.26 ***| - | -</td><td id="Xllj" class="" style="width:166px">- | 0.33 *** | - | -</td><td id="Aum@" class="" style="width:159px">- | 0.29 *** | - | -</td><td id="EYrP" class="" style="width:183px">- | 0.48 *** | - | -</td><td id=";;G}" class="" style="width:199px">- | -0.15 * | 0.25 | -</td><td id="bgal" class="" style="width:189px">- | 0.46 *** | - | -</td><td id="&lt;YS;" class="" style="width:201px">- | 0.16 * | 0.13 | -</td><td id="BkYg" class="" style="width:179px">- | 0.23 *** | - | -</td><td id="z?GD" class="" style="width:211px">- | 0.15 * | 0.27 | -</td><td id="SM_G" class="" style="width:205px">- | -0.14 * | - | -</td><td id="KO{^" class="" style="width:160px">- | 0.14 * | - | -</td><td id="J[;J" class="" style="width:144px">- | 0.12 | - | -</td></tr><tr id="16306d3a-00db-80d5-b8b3-decc0709d817"><th id="]Oqo" class="simple-table-header-color simple-table-header" style="width:254px"><mark class="highlight-blue_background">Currency</mark></th><td id="OwFA" class=""></td><td id="f]_T" class="" style="width:147px"></td><td id="Tp\;" class="" style="width:166.59375px"></td><td id="VhLw" class="" style="width:191px"></td><td id="_U@w" class="" style="width:137px"></td><td id="SSC[" class=""></td><td id="JyV|" class="" style="width:212px"></td><td id="NRSi" class="" style="width:178px">1</td><td id="`^Gv" class="" style="width:154px">- | 0.32 *** | - | -</td><td id="Xllj" class="" style="width:166px">- | <mark class="highlight-red"><strong>0.54 ***</strong></mark> | - | -</td><td id="Aum@" class="" style="width:159px">- | 0.41 *** | - | -</td><td id="EYrP" class="" style="width:183px">- | <mark class="highlight-red"><strong>0.56 ***</strong></mark> | - | -</td><td id=";;G}" class="" style="width:199px">- | 0.07 | 0.48 *** | -</td><td id="bgal" class="" style="width:189px">- | <mark class="highlight-red"><strong>0.51 ***</strong></mark> | - | -</td><td id="&lt;YS;" class="" style="width:201px">- | 0.39 *** | -0.01 | -</td><td id="BkYg" class="" style="width:179px">- | 0.38 *** | - | -</td><td id="z?GD" class="" style="width:211px">- | 0.20 ** | 0.20 | -</td><td id="SM_G" class="" style="width:205px">- | 0.24 *** | - | -</td><td id="KO{^" class="" style="width:160px">- | 0.28 *** | - | -</td><td id="J[;J" class="" style="width:144px">- | <strong>0.51 ***</strong> | - | -</td></tr><tr id="16306d3a-00db-80fa-90eb-edf2c7da091d"><th id="]Oqo" class="simple-table-header-color simple-table-header" style="width:254px"><mark class="highlight-blue_background">Timeliness</mark></th><td id="OwFA" class=""></td><td id="f]_T" class="" style="width:147px"></td><td id="Tp\;" class="" style="width:166.59375px"></td><td id="VhLw" class="" style="width:191px"></td><td id="_U@w" class="" style="width:137px"></td><td id="SSC[" class=""></td><td id="JyV|" class="" style="width:212px"></td><td id="NRSi" class="" style="width:178px"></td><td id="`^Gv" class="" style="width:154px">1</td><td id="Xllj" class="" style="width:166px">- | <mark class="highlight-red"><strong>0.55 ***</strong></mark> | - | -</td><td id="Aum@" class="" style="width:159px">- | 0.22 ** | - | -</td><td id="EYrP" class="" style="width:183px">- | <mark class="highlight-red"><strong>0.63 ***</strong></mark> | - | -</td><td id=";;G}" class="" style="width:199px">- | -0.42 *** | - | -</td><td id="bgal" class="" style="width:189px">- | <mark class="highlight-red"><strong>0.53 ***</strong></mark> | - | -</td><td id="&lt;YS;" class="" style="width:201px">- | -0.09 | - | -</td><td id="BkYg" class="" style="width:179px">- | 0.41 *** | - | -</td><td id="z?GD" class="" style="width:211px">- | -0.01 | - | -</td><td id="SM_G" class="" style="width:205px">- | 0.29 *** | - | -</td><td id="KO{^" class="" style="width:160px">- | 0.16 * | - | -</td><td id="J[;J" class="" style="width:144px">- | 0.48 *** | - | -</td></tr><tr id="16306d3a-00db-8069-a476-f6eb3118f0b6"><th id="]Oqo" class="simple-table-header-color simple-table-header" style="width:254px"><mark class="highlight-purple_background">Accuracy</mark></th><td id="OwFA" class=""></td><td id="f]_T" class="" style="width:147px"></td><td id="Tp\;" class="" style="width:166.59375px"></td><td id="VhLw" class="" style="width:191px"></td><td id="_U@w" class="" style="width:137px"></td><td id="SSC[" class=""></td><td id="JyV|" class="" style="width:212px"></td><td id="NRSi" class="" style="width:178px"></td><td id="`^Gv" class="" style="width:154px"></td><td id="Xllj" class="" style="width:166px">1</td><td id="Aum@" class="" style="width:159px">0.10 | 0.38 *** | - | -</td><td id="EYrP" class="" style="width:183px">0.24 ** | <mark class="highlight-red"><strong>0.72 ***</strong></mark> | - | -</td><td id=";;G}" class="" style="width:199px">-0.05 | -0.17 * | - | -</td><td id="bgal" class="" style="width:189px">-0.11 | <mark class="highlight-red"><strong>0.60 ***</strong></mark> | - | -</td><td id="&lt;YS;" class="" style="width:201px">0.10 | 0.15 * | - | -</td><td id="BkYg" class="" style="width:179px">-0.05 |<strong> </strong><mark class="highlight-red"><strong>0.54 ***</strong></mark> | - | -</td><td id="z?GD" class="" style="width:211px">0.05 | 0.02 | - | -</td><td id="SM_G" class="" style="width:205px">-0.13 | 0.29 *** | - | -</td><td id="KO{^" class="" style="width:160px">- | 0.32 *** | - | -</td><td id="J[;J" class="" style="width:144px">- | 0.35 *** | - | -</td></tr><tr id="16306d3a-00db-8086-9108-ca55c70b2048"><th id="]Oqo" class="simple-table-header-color simple-table-header" style="width:254px"><mark class="highlight-purple_background">Conciseness</mark></th><td id="OwFA" class=""></td><td id="f]_T" class="" style="width:147px"></td><td id="Tp\;" class="" style="width:166.59375px"></td><td id="VhLw" class="" style="width:191px"></td><td id="_U@w" class="" style="width:137px"></td><td id="SSC[" class=""></td><td id="JyV|" class="" style="width:212px"></td><td id="NRSi" class="" style="width:178px"></td><td id="`^Gv" class="" style="width:154px"></td><td id="Xllj" class="" style="width:166px"></td><td id="Aum@" class="" style="width:159px">1</td><td id="EYrP" class="" style="width:183px">0.32 *** | <mark class="highlight-red"><strong>0.54 ***</strong></mark> | - | -</td><td id=";;G}" class="" style="width:199px">0.16 | 0.10 | - | -</td><td id="bgal" class="" style="width:189px">0.13 | 0.44 *** | - | -</td><td id="&lt;YS;" class="" style="width:201px">0.12 | 0.44 *** | - | -</td><td id="BkYg" class="" style="width:179px">-0.01 | 0.09 | - | -</td><td id="z?GD" class="" style="width:211px">0.10 | 0.22 ** | - | -</td><td id="SM_G" class="" style="width:205px">-0.09 | -0.09 | - | -</td><td id="KO{^" class="" style="width:160px">- | 0.29 *** | - | -</td><td id="J[;J" class="" style="width:144px">- | 0.08 | - | -</td></tr><tr id="16306d3a-00db-8043-b8fd-ffd4868679ae"><th id="]Oqo" class="simple-table-header-color simple-table-header" style="width:254px"><mark class="highlight-purple_background">Consistency</mark></th><td id="OwFA" class=""></td><td id="f]_T" class="" style="width:147px"></td><td id="Tp\;" class="" style="width:166.59375px"></td><td id="VhLw" class="" style="width:191px"></td><td id="_U@w" class="" style="width:137px"></td><td id="SSC[" class=""></td><td id="JyV|" class="" style="width:212px"></td><td id="NRSi" class="" style="width:178px"></td><td id="`^Gv" class="" style="width:154px"></td><td id="Xllj" class="" style="width:166px"></td><td id="Aum@" class="" style="width:159px"></td><td id="EYrP" class="" style="width:183px">1</td><td id=";;G}" class="" style="width:199px">0.03 | -0.35 *** | - | -</td><td id="bgal" class="" style="width:189px">0.13 | <mark class="highlight-red"><strong>0.60 ***</strong></mark>| - | -</td><td id="&lt;YS;" class="" style="width:201px">0.09 | 0.09 | - | -</td><td id="BkYg" class="" style="width:179px">0.15 | 0.48 **<strong>*</strong>| - | -</td><td id="z?GD" class="" style="width:211px">0.18 * | -0.04 | - | -</td><td id="SM_G" class="" style="width:205px">0.11 | 0.22 ** | - | -</td><td id="KO{^" class="" style="width:160px">- | 0.39 *** | - | -</td><td id="J[;J" class="" style="width:144px">- | 0.48 *** | - | -</td></tr><tr id="16306d3a-00db-80f2-b060-c7b7247fe3d1"><th id="]Oqo" class="simple-table-header-color simple-table-header" style="width:254px"><mark class="highlight-red_background">Interoperability</mark></th><td id="OwFA" class=""></td><td id="f]_T" class="" style="width:147px"></td><td id="Tp\;" class="" style="width:166.59375px"></td><td id="VhLw" class="" style="width:191px"></td><td id="_U@w" class="" style="width:137px"></td><td id="SSC[" class=""></td><td id="JyV|" class="" style="width:212px"></td><td id="NRSi" class="" style="width:178px"></td><td id="`^Gv" class="" style="width:154px"></td><td id="Xllj" class="" style="width:166px"></td><td id="Aum@" class="" style="width:159px"></td><td id="EYrP" class="" style="width:183px"></td><td id=";;G}" class="" style="width:199px">1</td><td id="bgal" class="" style="width:189px"><mark class="highlight-red"><strong>0.63 ***</strong></mark> | -0.14 * | - | -</td><td id="&lt;YS;" class="" style="width:201px">0.11 | 0.34 *** | 0.25 | -</td><td id="BkYg" class="" style="width:179px">0.20 * | -0.36 *** | - | -</td><td id="z?GD" class="" style="width:211px">0.36 *** | 0.22 ** | 0.36 ** | -</td><td id="SM_G" class="" style="width:205px">-0.07 | -0.22 ** | - | -</td><td id="KO{^" class="" style="width:160px">- | -0.31 *** | - | -</td><td id="J[;J" class="" style="width:144px">- | -0.42 *** | - | -</td></tr><tr id="16306d3a-00db-8043-bcf7-edc6045d8f80"><th id="]Oqo" class="simple-table-header-color simple-table-header" style="width:254px"><mark class="highlight-red_background">Interpretability</mark></th><td id="OwFA" class=""></td><td id="f]_T" class="" style="width:147px"></td><td id="Tp\;" class="" style="width:166.59375px"></td><td id="VhLw" class="" style="width:191px"></td><td id="_U@w" class="" style="width:137px"></td><td id="SSC[" class=""></td><td id="JyV|" class="" style="width:212px"></td><td id="NRSi" class="" style="width:178px"></td><td id="`^Gv" class="" style="width:154px"></td><td id="Xllj" class="" style="width:166px"></td><td id="Aum@" class="" style="width:159px"></td><td id="EYrP" class="" style="width:183px"></td><td id=";;G}" class="" style="width:199px"></td><td id="bgal" class="" style="width:189px">1</td><td id="&lt;YS;" class="" style="width:201px">0 | 0.41 *** | - | -</td><td id="BkYg" class="" style="width:179px">0.22 *| 0.49 *** | - | -</td><td id="z?GD" class="" style="width:211px">0.35 *** | 0.09 | - | -</td><td id="SM_G" class="" style="width:205px">-0.06 | 0.16 * | - | -</td><td id="KO{^" class="" style="width:160px">- | 0.27 *** | - | -</td><td id="J[;J" class="" style="width:144px">- | 0.31 *** | - | -</td></tr><tr id="16306d3a-00db-8032-a9f6-f49098ec0772"><th id="]Oqo" class="simple-table-header-color simple-table-header" style="width:254px"><mark class="highlight-red_background">Rep. conciseness</mark></th><td id="OwFA" class=""></td><td id="f]_T" class="" style="width:147px"></td><td id="Tp\;" class="" style="width:166.59375px"></td><td id="VhLw" class="" style="width:191px"></td><td id="_U@w" class="" style="width:137px"></td><td id="SSC[" class=""></td><td id="JyV|" class="" style="width:212px"></td><td id="NRSi" class="" style="width:178px"></td><td id="`^Gv" class="" style="width:154px"></td><td id="Xllj" class="" style="width:166px"></td><td id="Aum@" class="" style="width:159px"></td><td id="EYrP" class="" style="width:183px"></td><td id=";;G}" class="" style="width:199px"></td><td id="bgal" class="" style="width:189px"></td><td id="&lt;YS;" class="" style="width:201px">1</td><td id="BkYg" class="" style="width:179px">- 0.05 | 0.05 | - | -</td><td id="z?GD" class="" style="width:211px">0.06 | 0.48 *** | 0.35 ** | -</td><td id="SM_G" class="" style="width:205px">0.04 | -0.13 | - | -</td><td id="KO{^" class="" style="width:160px">- | 0.04 | - | -</td><td id="J[;J" class="" style="width:144px">- | -0.01 | - | -</td></tr><tr id="16306d3a-00db-8012-82a7-dcdee2d1ec32"><th id="]Oqo" class="simple-table-header-color simple-table-header" style="width:254px"><mark class="highlight-red_background">Understandability</mark></th><td id="OwFA" class=""></td><td id="f]_T" class="" style="width:147px"></td><td id="Tp\;" class="" style="width:166.59375px"></td><td id="VhLw" class="" style="width:191px"></td><td id="_U@w" class="" style="width:137px"></td><td id="SSC[" class=""></td><td id="JyV|" class="" style="width:212px"></td><td id="NRSi" class="" style="width:178px"></td><td id="`^Gv" class="" style="width:154px"></td><td id="Xllj" class="" style="width:166px"></td><td id="Aum@" class="" style="width:159px"></td><td id="EYrP" class="" style="width:183px"></td><td id=";;G}" class="" style="width:199px"></td><td id="bgal" class="" style="width:189px"></td><td id="&lt;YS;" class="" style="width:201px"></td><td id="BkYg" class="" style="width:179px">1</td><td id="z?GD" class="" style="width:211px">0.18 * | -0.01 | - | -</td><td id="SM_G" class="" style="width:205px">0.03 | 0.42 *** | - | -</td><td id="KO{^" class="" style="width:160px">- | 0.44 *** | - | -</td><td id="J[;J" class="" style="width:144px">- | <mark class="highlight-red"><strong>0.54 ***</strong></mark> | - | -</td></tr><tr id="16306d3a-00db-8047-84d6-ce895540eae2"><th id="]Oqo" class="simple-table-header-color simple-table-header" style="width:254px"><mark class="highlight-red_background">Versatility</mark></th><td id="OwFA" class=""></td><td id="f]_T" class="" style="width:147px"></td><td id="Tp\;" class="" style="width:166.59375px"></td><td id="VhLw" class="" style="width:191px"></td><td id="_U@w" class="" style="width:137px"></td><td id="SSC[" class=""></td><td id="JyV|" class="" style="width:212px"></td><td id="NRSi" class="" style="width:178px"></td><td id="`^Gv" class="" style="width:154px"></td><td id="Xllj" class="" style="width:166px"></td><td id="Aum@" class="" style="width:159px"></td><td id="EYrP" class="" style="width:183px"></td><td id=";;G}" class="" style="width:199px"></td><td id="bgal" class="" style="width:189px"></td><td id="&lt;YS;" class="" style="width:201px"></td><td id="BkYg" class="" style="width:179px"></td><td id="z?GD" class="" style="width:211px">1</td><td id="SM_G" class="" style="width:205px">-0.01 | -0.22 ** | - | -</td><td id="KO{^" class="" style="width:160px">- | 0.03 | - | -</td><td id="J[;J" class="" style="width:144px">- | 0.02 | - | -</td></tr><tr id="16306d3a-00db-8018-9598-c1e71555c312"><th id="]Oqo" class="simple-table-header-color simple-table-header" style="width:254px"><mark class="highlight-gray_background">Believability</mark></th><td id="OwFA" class=""></td><td id="f]_T" class="" style="width:147px"></td><td id="Tp\;" class="" style="width:166.59375px"></td><td id="VhLw" class="" style="width:191px"></td><td id="_U@w" class="" style="width:137px"></td><td id="SSC[" class=""></td><td id="JyV|" class="" style="width:212px"></td><td id="NRSi" class="" style="width:178px"></td><td id="`^Gv" class="" style="width:154px"></td><td id="Xllj" class="" style="width:166px"></td><td id="Aum@" class="" style="width:159px"></td><td id="EYrP" class="" style="width:183px"></td><td id=";;G}" class="" style="width:199px"></td><td id="bgal" class="" style="width:189px"></td><td id="&lt;YS;" class="" style="width:201px"></td><td id="BkYg" class="" style="width:179px"></td><td id="z?GD" class="" style="width:211px"></td><td id="SM_G" class="" style="width:205px">1</td><td id="KO{^" class="" style="width:160px">- | 0.32 *** | - | -</td><td id="J[;J" class="" style="width:144px">- | 0.46 *** | - | -</td></tr><tr id="16306d3a-00db-80aa-9ef0-c43c1a02d1ea"><th id="]Oqo" class="simple-table-header-color simple-table-header" style="width:254px"><mark class="highlight-gray_background">Reputation</mark></th><td id="OwFA" class=""></td><td id="f]_T" class="" style="width:147px"></td><td id="Tp\;" class="" style="width:166.59375px"></td><td id="VhLw" class="" style="width:191px"></td><td id="_U@w" class="" style="width:137px"></td><td id="SSC[" class=""></td><td id="JyV|" class="" style="width:212px"></td><td id="NRSi" class="" style="width:178px"></td><td id="`^Gv" class="" style="width:154px"></td><td id="Xllj" class="" style="width:166px"></td><td id="Aum@" class="" style="width:159px"></td><td id="EYrP" class="" style="width:183px"></td><td id=";;G}" class="" style="width:199px"></td><td id="bgal" class="" style="width:189px"></td><td id="&lt;YS;" class="" style="width:201px"></td><td id="BkYg" class="" style="width:179px"></td><td id="z?GD" class="" style="width:211px"></td><td id="SM_G" class="" style="width:205px"></td><td id="KO{^" class="" style="width:160px">1</td><td id="J[;J" class="" style="width:144px">- | 0.38 *** | - | -</td></tr><tr id="16306d3a-00db-803f-b955-faf6df83b62a"><th id="]Oqo" class="simple-table-header-color simple-table-header" style="width:254px"><mark class="highlight-gray_background">Verifiability</mark></th><td id="OwFA" class=""></td><td id="f]_T" class="" style="width:147px"></td><td id="Tp\;" class="" style="width:166.59375px"></td><td id="VhLw" class="" style="width:191px"></td><td id="_U@w" class="" style="width:137px"></td><td id="SSC[" class=""></td><td id="JyV|" class="" style="width:212px"></td><td id="NRSi" class="" style="width:178px"></td><td id="`^Gv" class="" style="width:154px"></td><td id="Xllj" class="" style="width:166px"></td><td id="Aum@" class="" style="width:159px"></td><td id="EYrP" class="" style="width:183px"></td><td id=";;G}" class="" style="width:199px"></td><td id="bgal" class="" style="width:189px"></td><td id="&lt;YS;" class="" style="width:201px"></td><td id="BkYg" class="" style="width:179px"></td><td id="z?GD" class="" style="width:211px"></td><td id="SM_G" class="" style="width:205px"></td><td id="KO{^" class="" style="width:160px"></td><td id="J[;J" class="" style="width:144px">1</td></tr></tbody></table><hr id="16306d3a-00db-8012-bbe9-e892ea4677be"/><hr id="16306d3a-00db-8063-8f14-d15ab552703b"/><h1 id="16306d3a-00db-804b-a7c2-f485d4712295" class="">RQ2 - Correlation matrices for RQ2 (table 2. in the paper, expanded for every tool)</h1><p id="16306d3a-00db-80c0-a3ba-f0bb297a5af8" class="">The underlying correlation matrices, were generated considering metrics that are measured by at least <strong>two</strong> tools, so as to simplify comparison. The metrics were then combined linearly into dimensions, but only where the metrics in the dimension are the same for all 4 tools, otherwise the metric is left without aggregating, this is to have a fair comparison of dimensions across tools. The linear combination is performed using functions implemented in the <code>utils.py</code> script, which is part of the publicly available GitHub repository. These functions, specifically those starting with the prefix “merge” can be accessed at the following link: <a href="https://anonymous.4open.science/r/AreQualityDimensionsCorrelated/src/utils.py">https://anonymous.4open.science/r/AreQualityDimensionsCorrelated/src/utils.py</a> . There are different functions depending on the tool, this is because of the different nomenclature used for the metrics measured.</p><p id="16406d3a-00db-80c0-afcf-dc2555e46c47" class=""> Only significant correlations among the 4 tools were reported in the paper, making a union. The complete table is given here, including correlations less than 0.5. Finally, complete correlation matrices are also provided, divided according to the tool under consideration.</p><h2 id="16406d3a-00db-807a-afca-cb472fad91c4" class="">Complete Table for RQ2</h2><p id="16406d3a-00db-80b4-a0d5-f3df607f9742" class="">Pairs of dimensions with at least moderate correlation (i.e., an absolute correlation coefficient of 0.5 or greater) are highlighted in <mark class="highlight-red">red</mark> for emphasis. The symbol &#x27;<strong>-</strong>&#x27; means that the quality measurement for that pair of dimensions is not supported by the tool. </p><p id="16406d3a-00db-806b-8a35-f588b99f0e72" class="">Legend: LUZZU | KGHB24 | YummyData | SPARQLES<br/><br/><mark class="highlight-teal_background">ACCESSIBILITY </mark>- <mark class="highlight-orange_background">CONTEXTUAL</mark> - <mark class="highlight-blue_background">DATASET DYNAMICITY</mark> - <mark class="highlight-purple_background">INTRINSIC</mark> - <mark class="highlight-red_background">REPRESENTATIONAL</mark> - <mark class="highlight-gray_background">TRUST</mark></p><table id="16406d3a-00db-8036-8209-d7b6aeec9db0" class="simple-table"><thead class="simple-table-header"><tr id="16406d3a-00db-806f-85c1-d0577a2ce18f"><th id="E`X|" class="simple-table-header-color simple-table-header" style="width:258.796875px">Luzzu | KGHB | YUMMY | SPARQLES</th><th id="SEf_" class="simple-table-header-color simple-table-header"></th><th id="OfC~" class="simple-table-header-color simple-table-header"><mark class="highlight-teal_background">Licensing</mark></th><th id="`dtf" class="simple-table-header-color simple-table-header"><mark class="highlight-teal_background">Interlinking</mark></th><th id="abJI" class="simple-table-header-color simple-table-header"><mark class="highlight-teal_background">Performance</mark></th><th id="REfk" class="simple-table-header-color simple-table-header"><mark class="highlight-purple_background">Accuracy</mark></th><th id="BCpW" class="simple-table-header-color simple-table-header"><mark class="highlight-gray_background">Believability</mark></th><th id="oiRb" class="simple-table-header-color simple-table-header"><mark class="highlight-gray_background">Verifiability</mark></th><th id="up;J" class="simple-table-header-color simple-table-header"><mark class="highlight-blue_background">Currency</mark></th><th id="sjkN" class="simple-table-header-color simple-table-header" style="width:150.09375px"><mark class="highlight-orange_background">Amount of data</mark></th><th id="}FFN" class="simple-table-header-color simple-table-header" style="width:165.609375px"></th><th id="}:HT" class="simple-table-header-color simple-table-header" style="width:155px"></th><th id="Sj~Z" class="simple-table-header-color simple-table-header"><mark class="highlight-red_background">Interoperability</mark></th><th id="omG[" class="simple-table-header-color simple-table-header"><mark class="highlight-red_background">Interpretability</mark></th><th id="UmZV" class="simple-table-header-color simple-table-header"><mark class="highlight-red_background">Understandability</mark></th><th id="c\BB" class="simple-table-header-color simple-table-header" style="width:142.390625px"><mark class="highlight-red_background">Versatility</mark></th></tr></thead><tbody><tr id="16406d3a-00db-80f1-a1ee-fb4a267bd71b"><th id="E`X|" class="simple-table-header-color simple-table-header" style="width:258.796875px"></th><td id="SEf_" class=""></td><td id="OfC~" class=""></td><td id="`dtf" class=""></td><td id="abJI" class=""></td><td id="REfk" class=""></td><td id="BCpW" class=""></td><td id="oiRb" class=""></td><td id="up;J" class=""></td><td id="sjkN" class="" style="width:150.09375px"><mark class="highlight-orange_background">Num. of triples</mark></td><td id="}FFN" class="" style="width:165.609375px"><mark class="highlight-orange_background">Scope</mark></td><td id="}:HT" class="" style="width:155px"><mark class="highlight-orange_background">Level of detail</mark></td><td id="Sj~Z" class=""></td><td id="omG[" class=""></td><td id="UmZV" class=""></td><td id="c\BB" class="" style="width:142.390625px"></td></tr><tr id="16406d3a-00db-8037-b96b-d0ea5a587680"><th id="E`X|" class="simple-table-header-color simple-table-header" style="width:258.796875px"><mark class="highlight-teal_background">Licensing</mark></th><td id="SEf_" class=""></td><td id="OfC~" class="">-</td><td id="`dtf" class="">- | 0.05 | - | -</td><td id="abJI" class="">0.16 | -0.09 | - | -</td><td id="REfk" class="">0.15 | 0.17 * | -</td><td id="BCpW" class="">0.52 *** | -0.07 | - | -</td><td id="oiRb" class="">- | 0.16 * | 0.33 ** | -</td><td id="up;J" class="">- | 0.15* | <mark class="highlight-red">0,63 *** </mark>| -</td><td id="sjkN" class="" style="width:150.09375px">- | - | 0.09 | -</td><td id="}FFN" class="" style="width:165.609375px">- | 0.11 | -  | -</td><td id="}:HT" class="" style="width:155px">- | 0.05 | - | -</td><td id="Sj~Z" class="">- | - 0.01 | 0.27 * | -</td><td id="omG[" class="">0.05 | 0.07 | - | -</td><td id="UmZV" class="">-0.05 | 0.03 | - | -</td><td id="c\BB" class="" style="width:142.390625px">- | 0.10 | 0.23 | -</td></tr><tr id="16406d3a-00db-800f-a3e1-d5f42015dd55"><th id="E`X|" class="simple-table-header-color simple-table-header" style="width:258.796875px"><mark class="highlight-teal_background">Interlinking</mark></th><td id="SEf_" class=""></td><td id="OfC~" class=""></td><td id="`dtf" class="">-</td><td id="abJI" class="">- | -0.22 ** | -0.06 | -</td><td id="REfk" class="">- | 0.31 *** | - | -</td><td id="BCpW" class="">- | 0.37 *** | - | -</td><td id="oiRb" class="">- | 0.33 *** | 0.15 | -</td><td id="up;J" class="">- | 0.46 *** | 0.38 ** | -</td><td id="sjkN" class="" style="width:150.09375px">- | - | 0.03 | -</td><td id="}FFN" class="" style="width:165.609375px">- | 0.39 *** | - | -</td><td id="}:HT" class="" style="width:155px">- | 0.25 *** | - | -</td><td id="Sj~Z" class="">- | - 0.32 *** | 0.27 * | -</td><td id="omG[" class="">- | 0.46 *** | - | -</td><td id="UmZV" class="">- | <mark class="highlight-red">0.59 ***</mark> | - | -</td><td id="c\BB" class="" style="width:142.390625px">- | 0.26 |<mark class="highlight-red">0,53 ***</mark> | -</td></tr><tr id="16406d3a-00db-8041-a1fd-da4983383737"><th id="E`X|" class="simple-table-header-color simple-table-header" style="width:258.796875px"><mark class="highlight-teal_background">Performance</mark></th><td id="SEf_" class=""></td><td id="OfC~" class=""></td><td id="`dtf" class=""></td><td id="abJI" class="">-</td><td id="REfk" class="">-0.02 | -0.27 *** | - | -</td><td id="BCpW" class="">0.18 * | -0.16 * | - | -</td><td id="oiRb" class="">-0.12 | -0.20 ** | 0.05 | -</td><td id="up;J" class="">- | -0.16 * | -0.08 | -</td><td id="sjkN" class="" style="width:150.09375px">- | - | <mark class="highlight-red">0.56 ***</mark> | 0.33 *</td><td id="}FFN" class="" style="width:165.609375px">- | <mark class="highlight-red">-0.68 ***</mark> | - | <mark class="highlight-red">0.52</mark> <mark class="highlight-red">***</mark></td><td id="}:HT" class="" style="width:155px">- | -0.15 * | - | 0.21</td><td id="Sj~Z" class="">- | <mark class="highlight-red">0.62 ***</mark> | 0.14 | -</td><td id="omG[" class="">0.08 | -0.43*** | - | -</td><td id="UmZV" class="">-0.15 |<mark class="highlight-red"> -0.56 ***</mark> | - | -</td><td id="c\BB" class="" style="width:142.390625px">- | 0.16 * |<strong> </strong>0.09<strong> </strong>| -</td></tr><tr id="16406d3a-00db-8076-8a17-e74d689ee6e6"><th id="E`X|" class="simple-table-header-color simple-table-header" style="width:258.796875px"><mark class="highlight-purple_background">Accuracy</mark></th><td id="SEf_" class=""></td><td id="OfC~" class=""></td><td id="`dtf" class=""></td><td id="abJI" class=""></td><td id="REfk" class="">-</td><td id="BCpW" class="">0.11 | 0.07 | - | -</td><td id="oiRb" class="">0.11 | 0.34 *** | - | -</td><td id="up;J" class="">- | <mark class="highlight-red">0.54 ***</mark> | - | -</td><td id="sjkN" class="" style="width:150.09375px">- | - | - | -</td><td id="}FFN" class="" style="width:165.609375px">- | 0.21 ** | - | -</td><td id="}:HT" class="" style="width:155px">- | 0.34 *** | - | -</td><td id="Sj~Z" class="">- | -0.19 *** | - | -</td><td id="omG[" class="">0.02 | <mark class="highlight-red">0.53 ***</mark> | - | -</td><td id="UmZV" class="">0.39 *** | 0.33 *** | - | -</td><td id="c\BB" class="" style="width:142.390625px">- | 0.27 *** | - | -</td></tr><tr id="16406d3a-00db-80e9-a6dd-d409f5d70b01"><th id="E`X|" class="simple-table-header-color simple-table-header" style="width:258.796875px"><mark class="highlight-gray_background">Believability</mark></th><td id="SEf_" class=""></td><td id="OfC~" class=""></td><td id="`dtf" class=""></td><td id="abJI" class=""></td><td id="REfk" class=""></td><td id="BCpW" class="">-</td><td id="oiRb" class="">- | 0.11 | - | -</td><td id="up;J" class="">- | 0.24 *** | - | -</td><td id="sjkN" class="" style="width:150.09375px">- | - | - | -</td><td id="}FFN" class="" style="width:165.609375px">- | 0.25 *** | - | -</td><td id="}:HT" class="" style="width:155px">- | -0.15 * | - | -</td><td id="Sj~Z" class="">- | -0.27 *** | - | -</td><td id="omG[" class="">-0.02 | 0.16 * | - | -</td><td id="UmZV" class="">0.02 | 0.41 *** | - | -</td><td id="c\BB" class="" style="width:142.390625px">- | 0.27 *** | - | -</td></tr><tr id="16406d3a-00db-8046-8fed-c0671d9be47a"><th id="E`X|" class="simple-table-header-color simple-table-header" style="width:258.796875px"><mark class="highlight-gray_background">Verifiability</mark></th><td id="SEf_" class=""></td><td id="OfC~" class=""></td><td id="`dtf" class=""></td><td id="abJI" class=""></td><td id="REfk" class=""></td><td id="BCpW" class=""></td><td id="oiRb" class="">-</td><td id="up;J" class="">- | <mark class="highlight-red">0.54 ***</mark> | 0.25 | -</td><td id="sjkN" class="" style="width:150.09375px">- | - | 0.02 | -</td><td id="}FFN" class="" style="width:165.609375px">- | 0.21 ** | - | -</td><td id="}:HT" class="" style="width:155px">- | 0.17 * | - | -</td><td id="Sj~Z" class="">- | -0.19 ** | 0.19 | -</td><td id="omG[" class="">- | 0.37 *** | - | -</td><td id="UmZV" class="">- | 0.35 *** | - | -</td><td id="c\BB" class="" style="width:142.390625px">- | 0.26 *** | 0.22 | -</td></tr><tr id="16406d3a-00db-8028-b318-e627a12b602f"><th id="E`X|" class="simple-table-header-color simple-table-header" style="width:258.796875px"><mark class="highlight-blue_background">Currency</mark></th><td id="SEf_" class=""></td><td id="OfC~" class=""></td><td id="`dtf" class=""></td><td id="abJI" class=""></td><td id="REfk" class=""></td><td id="BCpW" class=""></td><td id="oiRb" class=""></td><td id="up;J" class="">-</td><td id="sjkN" class="" style="width:150.09375px">- | - | 0.13 | -</td><td id="}FFN" class="" style="width:165.609375px">- | 0.20 ** | - | -</td><td id="}:HT" class="" style="width:155px">- | 0.18 * | - | -</td><td id="Sj~Z" class="">- | -0.17 * | 0.48 *** | -</td><td id="omG[" class="">- | 0.48 *** | - | -</td><td id="UmZV" class="">- | 0.45 *** | - | -</td><td id="c\BB" class="" style="width:142.390625px">- | 0.13 | 0.20 | -</td></tr><tr id="16406d3a-00db-8017-a30f-d4fac4ae8dbe"><th id="E`X|" class="simple-table-header-color simple-table-header" style="width:258.796875px"><mark class="highlight-orange_background">Amount of data</mark></th><td id="SEf_" class=""><mark class="highlight-orange_background">Num. of triples</mark></td><td id="OfC~" class=""></td><td id="`dtf" class=""></td><td id="abJI" class=""></td><td id="REfk" class=""></td><td id="BCpW" class=""></td><td id="oiRb" class=""></td><td id="up;J" class=""></td><td id="sjkN" class="" style="width:150.09375px">-</td><td id="}FFN" class="" style="width:165.609375px">- | - | - | <mark class="highlight-red">0.94 ***</mark></td><td id="}:HT" class="" style="width:155px">- | - | - | <mark class="highlight-red">0.67 ***</mark></td><td id="Sj~Z" class="">- | - | 0.25 | -</td><td id="omG[" class="">- | - | - | -</td><td id="UmZV" class="">- | - | - | -</td><td id="c\BB" class="" style="width:142.390625px">- | - | 0.27 | -</td></tr><tr id="16406d3a-00db-8058-8af9-c017c342408f"><th id="E`X|" class="simple-table-header-color simple-table-header" style="width:258.796875px"></th><td id="SEf_" class=""><mark class="highlight-orange_background">Scope</mark></td><td id="OfC~" class=""></td><td id="`dtf" class=""></td><td id="abJI" class=""></td><td id="REfk" class=""></td><td id="BCpW" class=""></td><td id="oiRb" class=""></td><td id="up;J" class=""></td><td id="sjkN" class="" style="width:150.09375px"></td><td id="}FFN" class="" style="width:165.609375px">-</td><td id="}:HT" class="" style="width:155px">- | 0.20 ** | - | <mark class="highlight-red">0.69 ***</mark></td><td id="Sj~Z" class="">- | <mark class="highlight-red">-0.77 ***</mark> | - | -</td><td id="omG[" class="">- | 0.46 *** | - | -</td><td id="UmZV" class="">- | <mark class="highlight-red">0.70 ***</mark> | - | -</td><td id="c\BB" class="" style="width:142.390625px">- | -0.04 | - | -</td></tr><tr id="16406d3a-00db-80b7-92d3-eee682285511"><th id="E`X|" class="simple-table-header-color simple-table-header" style="width:258.796875px"></th><td id="SEf_" class=""><mark class="highlight-orange_background">Level of detail</mark></td><td id="OfC~" class=""></td><td id="`dtf" class=""></td><td id="abJI" class=""></td><td id="REfk" class=""></td><td id="BCpW" class=""></td><td id="oiRb" class=""></td><td id="up;J" class=""></td><td id="sjkN" class="" style="width:150.09375px"></td><td id="}FFN" class="" style="width:165.609375px"></td><td id="}:HT" class="" style="width:155px">-</td><td id="Sj~Z" class="">- | -0.18 * | - | -</td><td id="omG[" class="">- | 0.48 *** | - | -</td><td id="UmZV" class="">- | 0.23 *** | - | -</td><td id="c\BB" class="" style="width:142.390625px">- | 0.17 * | - | -</td></tr><tr id="16406d3a-00db-80cf-87c0-e8a89b89872a"><th id="E`X|" class="simple-table-header-color simple-table-header" style="width:258.796875px"><mark class="highlight-red_background">Interoperability</mark></th><td id="SEf_" class=""></td><td id="OfC~" class=""></td><td id="`dtf" class=""></td><td id="abJI" class=""></td><td id="REfk" class=""></td><td id="BCpW" class=""></td><td id="oiRb" class=""></td><td id="up;J" class=""></td><td id="sjkN" class="" style="width:150.09375px"></td><td id="}FFN" class="" style="width:165.609375px"></td><td id="}:HT" class="" style="width:155px"></td><td id="Sj~Z" class="">-</td><td id="omG[" class="">- | -0.32 *** | - | -</td><td id="UmZV" class="">- | -<mark class="highlight-red">0.76 ***</mark> | - | -</td><td id="c\BB" class="" style="width:142.390625px">- | -0.04 | 0.36 ** | -</td></tr><tr id="16406d3a-00db-8045-abab-dfec92015c77"><th id="E`X|" class="simple-table-header-color simple-table-header" style="width:258.796875px"><mark class="highlight-red_background">Interpretability</mark></th><td id="SEf_" class=""></td><td id="OfC~" class=""></td><td id="`dtf" class=""></td><td id="abJI" class=""></td><td id="REfk" class=""></td><td id="BCpW" class=""></td><td id="oiRb" class=""></td><td id="up;J" class=""></td><td id="sjkN" class="" style="width:150.09375px"></td><td id="}FFN" class="" style="width:165.609375px"></td><td id="}:HT" class="" style="width:155px"></td><td id="Sj~Z" class=""></td><td id="omG[" class="">-</td><td id="UmZV" class="">0.07 | <mark class="highlight-red">0.57 ***</mark> | - | -</td><td id="c\BB" class="" style="width:142.390625px">- | 0.16 * | - | -</td></tr><tr id="16406d3a-00db-80e7-af6e-d88b6ac36e45"><th id="E`X|" class="simple-table-header-color simple-table-header" style="width:258.796875px"><mark class="highlight-red_background">Understandability</mark></th><td id="SEf_" class=""></td><td id="OfC~" class=""></td><td id="`dtf" class=""></td><td id="abJI" class=""></td><td id="REfk" class=""></td><td id="BCpW" class=""></td><td id="oiRb" class=""></td><td id="up;J" class=""></td><td id="sjkN" class="" style="width:150.09375px"></td><td id="}FFN" class="" style="width:165.609375px"></td><td id="}:HT" class="" style="width:155px"></td><td id="Sj~Z" class=""></td><td id="omG[" class=""></td><td id="UmZV" class="">-</td><td id="c\BB" class="" style="width:142.390625px">- | 0.12 | - | -</td></tr><tr id="16406d3a-00db-80e1-998e-e465b5555b77"><th id="E`X|" class="simple-table-header-color simple-table-header" style="width:258.796875px"><mark class="highlight-red_background">Versatility</mark></th><td id="SEf_" class=""></td><td id="OfC~" class=""></td><td id="`dtf" class=""></td><td id="abJI" class=""></td><td id="REfk" class=""></td><td id="BCpW" class=""></td><td id="oiRb" class=""></td><td id="up;J" class=""></td><td id="sjkN" class="" style="width:150.09375px"></td><td id="}FFN" class="" style="width:165.609375px"></td><td id="}:HT" class="" style="width:155px"></td><td id="Sj~Z" class=""></td><td id="omG[" class=""></td><td id="UmZV" class=""></td><td id="c\BB" class="" style="width:142.390625px">-</td></tr></tbody></table><hr id="16406d3a-00db-80fb-9932-e7c03a2ef9bb"/><h2 id="16406d3a-00db-80dc-bff0-e5e3bb7e553c" class="">Correlation matrices by tool, only on metrics in common between at least 2 tools</h2><h3 id="16306d3a-00db-8080-a417-ca59582dcbf9" class="">KGHeartBeat</h3><figure id="16306d3a-00db-80f2-9984-f37d13ff282b" class="image"><a href="tab-img/7bbb13be-e143-41a5-b32a-75ec6aa68048.png"><img style="width:1680px" src="tab-img/7bbb13be-e143-41a5-b32a-75ec6aa68048.png"/></a></figure><p id="16306d3a-00db-806e-831d-cdf203db806d" class="">
+</p><p id="16306d3a-00db-80fc-bcbe-d940af66d15a" class="">
+</p><p id="16306d3a-00db-8092-b1d5-f9a101a9ad2a" class="">
+</p><hr id="16306d3a-00db-804f-8308-c84955e1e9fd"/><h3 id="16306d3a-00db-80bd-82dc-c8e5d0f08648" class="">LUZZU</h3><p id="16306d3a-00db-808e-a1c9-de85b439030f" class="">
+</p><figure id="16306d3a-00db-80af-bea0-e85b6f6f6984" class="image"><a href="tab-img/35ab2f08-13ea-485c-b15a-59fbbad4f0d8.png"><img style="width:1632px" src="tab-img/35ab2f08-13ea-485c-b15a-59fbbad4f0d8.png"/></a></figure><hr id="16306d3a-00db-8032-9682-fd583de2b5e3"/><h3 id="16306d3a-00db-80df-9f22-e60d0f4fe121" class="">YummyData</h3><p id="16306d3a-00db-802a-a016-c58deafa91aa" class="">
+</p><figure id="16306d3a-00db-8041-8ace-ef0083b9b033" class="image"><a href="tab-img/1262ab9a-b899-4b1e-badb-74268ce620db.png"><img style="width:1584px" src="tab-img/1262ab9a-b899-4b1e-badb-74268ce620db.png"/></a></figure><hr id="16306d3a-00db-8089-9ac3-c972a3cb94cb"/><h3 id="16306d3a-00db-809b-b56e-cabce34a507a" class="">SPARQLES </h3><figure id="16306d3a-00db-800f-adac-c675725dae76" class="image"><a href="tab-img/adda5177-4e25-443f-a045-421df6a921c6.png"><img style="width:1584px" src="tab-img/adda5177-4e25-443f-a045-421df6a921c6.png"/></a></figure><hr id="16306d3a-00db-8097-b693-d7d197e3398b"/><hr id="16306d3a-00db-8055-8d71-d33b7e78d508"/><h1 id="16306d3a-00db-80d0-80fe-c34160861c1e" class="">RQ3 - KGHB23 vs KGHB24 (table 3. in the paper)</h1><p id="16306d3a-00db-801f-90fe-df0b7edade69" class="">Below are the correlation matrices calculated from KGHeartBeat quality data computed in November 2023 and those in November 2024. In the paper the table presents pairs of dimensions that were correlated in at least one of the assessments and only dimensions correlated with at least one other dimension are included. The two complete correlation matrices are presented here. </p><h2 id="16306d3a-00db-80a2-a890-f1900db0f547" class="">KGHB 2023-11-27</h2><p id="16306d3a-00db-8058-8518-f6d1e0f385ff" class="">
+</p><figure id="16306d3a-00db-803e-af80-eb477d33a412" class="image"><a href="tab-img/18b75a99-3538-4460-b4d6-cb90c0eb4ecd.png"><img style="width:1536px" src="tab-img/18b75a99-3538-4460-b4d6-cb90c0eb4ecd.png"/></a></figure><p id="16306d3a-00db-8056-9a62-cad16cb452e8" class="">
+</p><h2 id="16306d3a-00db-8058-96cf-c47583537e55" class="">KGHB 2024-11-24</h2><p id="16306d3a-00db-804b-8372-d3cca85cf561" class="">
+</p><figure id="16306d3a-00db-80ef-9c55-dc5f721f8b45" class="image"><a href="tab-img/71847864-865e-4d0d-8ce9-f01312fc3c6c.png"><img style="width:1488px" src="tab-img/71847864-865e-4d0d-8ce9-f01312fc3c6c.png"/></a></figure></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
