@@ -1,7 +1,3 @@
-cd data/quality_analysis_results
-sh extract_quality_data.sh
-cd ..
-cd ..
 # Create and activate a Python virtual environment
 python3 -m venv venv
 source ./venv/bin/activate
