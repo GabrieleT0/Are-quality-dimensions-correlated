@@ -6,7 +6,7 @@ In the folder [/data/inferential_statistics_results/](./data/inferential_statist
 If, instead, you want to regenerate the matrices and graphs using ther provided quality data, refer to section [How to reproduce the correlation matrices](#how-to-reproduce-the-correlation-matrices-).
 
 # How to reproduce the correlation matrices 🔬
-Download the quality data computed by [KGHeartBeat](https://github.com/isislab-unisa/KGHeartBeat) here: [https://drive.google.com/file/d/10oY0Vk-fdhzjlDoHE9_BHx-6M3mUrrS3/view?usp=sharing](https://drive.google.com/file/d/10oY0Vk-fdhzjlDoHE9_BHx-6M3mUrrS3/view?usp=sharing). Move the zip file downloaded into [/data/quality_analysis_results](./data/quality_analysis_results/).
+Download the quality data computed by [KGHeartBeat](https://github.com/isislab-unisa/KGHeartBeat) here: [https://doi.org/10.5281/zenodo.16419915](https://doi.org/10.5281/zenodo.16419915). Move the CSVs file downloaded into [/data/quality_analysis_results](./data/quality_analysis_results/).
 
 ## Run the code 🚀
 **Requirements**
@@ -24,7 +24,7 @@ Then, execute it
 ```sh
 ./run_correlation_analysis.sh
 ```
-This script will create and activate a Python virtual environment, install the required dependencies using ```pip install```, and extract the files containing the KGHear[KGHeartBeat](https://github.com/isislab-unisa/KGHeartBeat)tBeat quality data.
+This script will create and activate a Python virtual environment, install the required dependencies using ```pip install```, and extract the files containing the [KGHeartBeat](https://github.com/isislab-unisa/KGHeartBeat)tBeat quality data.
 At the end, the ```main.py``` file is executed, which calculates the correlation on the quality data from the four tools. The correlation matrices will be saved in [/data/inferential_statistics_results/](./data/inferential_statistics_results/), while the heatmaps will be stored in [/data/charts/heatmap](./data/charts/heatmap/)
 
 ### Windows users
